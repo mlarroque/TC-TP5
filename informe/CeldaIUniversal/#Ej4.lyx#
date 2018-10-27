@@ -192,49 +192,12 @@ Dicho sistema se resolvio mediante la funcion linsolve del paquete sympy
 
 \begin_layout Standard
 Se puede ver facilmente de la expresion anterior que se puede anular el
- termino correspondiente a la primera potencia de s en el numerador, si
- se plantea la relacion:
+ termino correspondiente a la primera potencia de s si se plantea la relacion:
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\begin{equation}
-R_{3}R_{4}=R_{2}R_{7}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Entonces de (1) y e (2), se tiene que la funcion transferencia puede reescirbirs
-e de la forma conocida de un filtro Notch como:
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size larger
-\begin_inset Formula $H(s)=k\frac{(\frac{s}{\omega_{z}})^{2}+1}{(\frac{s}{\omega_{p}})^{2}+\frac{s}{\omega_{p}Q}+1}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Donde:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\begin{cases}
-\begin{array}{c}
-k=-\frac{R_{6}}{R_{8}}\\
-\omega_{z}=\sqrt{\frac{R_{7}}{C_{1}C_{2}R_{1}R_{4}R_{8}}}\\
-\omega_{p}=\sqrt{\frac{R_{5}}{C_{1}C_{2}R_{1}R_{4}R_{6}}}\\
-Q=R_{2}\sqrt{\frac{C_{1}R_{5}}{C_{2}R_{1}R_{4}R_{6}}}
-\end{array}\end{cases}$
+\begin_inset Formula $ $
 \end_inset
 
 
