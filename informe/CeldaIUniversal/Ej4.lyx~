@@ -83,6 +83,10 @@ Celda Universal
 Introduccion
 \end_layout
 
+\begin_layout Subsubsection
+Celdas universales basicas
+\end_layout
+
 \begin_layout Subsection
 Objetivos y resumen
 \end_layout
@@ -101,6 +105,50 @@ Impedancia de entrada
 
 \begin_layout Subsubsection
 Impedancia de salida
+\end_layout
+
+\begin_layout Subsubsection
+Sensibilidades
+\end_layout
+
+\begin_layout Subsubsection
+Rango dinamico
+\end_layout
+
+\begin_layout Subsection
+Limitaciones del filtro
+\end_layout
+
+\begin_layout Subsubsection
+Sensibilidades,tolerancias y calibracion
+\end_layout
+
+\begin_layout Subsubsection
+Rango de amplitudes admisibles
+\end_layout
+
+\begin_layout Subsection
+Resultados obtenidos
+\end_layout
+
+\begin_layout Subsubsection
+Funcion transferencia
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de entrada
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de salida
+\end_layout
+
+\begin_layout Subsection
+Analisis de los resultados y comparacion con otras celdas
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
 \end_layout
 
 \end_body
