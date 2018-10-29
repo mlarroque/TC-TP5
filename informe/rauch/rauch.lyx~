@@ -1,0 +1,1588 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement tph
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 19mm
+\topmargin 19mm
+\rightmargin 19mm
+\bottommargin 43mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Celda Rauch (Delyiannis-Friend)
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+En un principio se analizará teóricamente la celda Rauch, con un enfoque
+ en su configuración pasabanda, ya que es el filtro a realizar, como así
+ un análisis analítico de su función transferencia, impedancia tanto de
+ entrada como de salida.
+ También se realizará un estudio de rango dinámico y uno de sensibilidades
+ respecto a la ganancia, el factor de calidad y la frecuencia de corte del
+ filtro a implementar.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, se observarán restricciones debido a las impedancias de entrada/s
+alida, a los valores de ganancia y valores de Q realizables.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+, y posteriormente se comparará con otras celdas y se verán casos de uso.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename circsinQ.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Rauch (Delyiannis-Friend) en configuración pasabanda.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis Teórico de la Celda
+\end_layout
+
+\begin_layout Subsubsection
+Función Transferencia
+\end_layout
+
+\begin_layout Standard
+Se consideró al amplificador operacional como ideal.
+ Para ello, la ecuación del mismo resulta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{o}=A_{vol}(V{}^{+}-V^{-})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considerando 
+\begin_inset Formula $A_{vol}\rightarrow\infty$
+\end_inset
+
+, y como el terminal positivo está conectado a tierra, y ambas tensiones
+ (
+\begin_inset Formula $V^{+}$
+\end_inset
+
+y 
+\begin_inset Formula $V^{-}$
+\end_inset
+
+) son iguales, se consigue tierra virtual en la entrada negativa del operacional.
+ De nodos resultan las siguientes relaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{o}}{R_{2}}=\frac{-V_{a}}{1/(sC_{1})}\label{eq:relsinq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{1}-V_{a}}{R_{1}}+\frac{V_{o}-V_{a}}{1/(sC_{2})}+\frac{-V_{a}}{1/(sC_{1})}=\frac{V_{a}}{R_{3}}\label{eq:ecuacion2sinq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reemplazando (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relsinq"
+
+\end_inset
+
+) en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ecuacion2sinq"
+
+\end_inset
+
+) se llega a:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{o}}{V_{1}}=H_{BP}(s)=\frac{sR_{2}C_{1}R_{3}}{s^{2}R_{1}R_{2}C_{2}C_{1}+s(C_{3}R_{1}R_{3}+R_{1}C_{2}R_{3})+(R_{3}+R_{1})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La ecuación anterior representa la función transferencia genérica de la
+ celda Rauch.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, sabiendo que la transferencia característica de un filtro
+ pasabanda es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_{BP}(s)=\frac{G\cdot\frac{s}{\omega_{o}Q}}{\frac{s^{2}}{\omega_{o}^{2}}+\frac{s}{\omega_{o}Q}+1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se derivan los siguientes parámetros:
+\end_layout
+
+\begin_layout Itemize
+Frecuencia de los polos: 
+\begin_inset Formula $\omega_{o}=\sqrt{\frac{1+\frac{R_{3}}{R_{1}}}{R_{1}R_{2}C_{2}C_{1}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factor de calidad de la celda: 
+\begin_inset Formula $Q=\frac{\sqrt{1+\frac{R_{3}}{R_{1}}}}{\sqrt{\frac{R_{3}C_{1}}{R_{2}C_{2}}}+\sqrt{\frac{R_{3}C_{2}}{R_{2}C_{1}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ganancia: 
+\begin_inset Formula $G=\frac{\frac{R_{2}}{R_{1}}}{1+\frac{C_{1}}{C_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo que se suele realizar en este tipo de diseño es elegir valores de capacitores
+ iguales, para simplificar la elección de componentes, es decir 
+\begin_inset Formula $C_{1}=C_{2}$
+\end_inset
+
+.
+ Esto resulta, sin embargo en una versión simplificada del factor de calidad
+ que requiere valores altos de resistencias para obtener un Q elevado.
+\end_layout
+
+\begin_layout Standard
+Por ésto, se presenta una celda Delyiannis-Friend alternativa la cual se
+ analizará a continuación.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Q Enhancement
+\end_layout
+
+\begin_layout Standard
+Como se venía analizando, para obtener un Q elevado se requiere valores
+ de resistencias altos, lo que resultaría impráctico por devenir, por ejemplo,
+ en ruido térmico.
+ El libro que se plantea en el libro
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+R.
+ Schaumann, M.
+ E.
+ Van Valkenburg, 
+\begin_inset Quotes fld
+\end_inset
+
+Design of Analog Filters
+\begin_inset Quotes frd
+\end_inset
+
+, 1982, p.172.
+\end_layout
+
+\end_inset
+
+ en el que se basó el análisis propone el siguiente circuito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename circQenhanced.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Rauch en configuración pasabanda para Q elevado.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Función Transferencia
+\end_layout
+
+\begin_layout Standard
+El análisis analítico para el caso del Q mejorado es análogo al anterior
+ teniendo en cuenta que ahora el terminal positivo del operacional no está
+ conectado a masa, por lo que se tiene un divisor resistivo entre la salida
+ y este nodo, que resulta en 
+\begin_inset Formula $V^{+}=K\cdot V_{o}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mediante despejes matemáticos la transferencia queda de la forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_{BP}(s)=\frac{1}{1-K}\cdot\frac{G\cdot\frac{s}{\omega_{o}Q_{o}}}{\frac{s^{2}}{\omega_{o}^{2}}+\frac{s}{\omega_{o}Q}+1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con ambos capacitores iguales y las siguientes equivalencias, si tomamos
+ 
+\begin_inset Formula $\alpha=\frac{K}{1-K}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Frecuencia de los polos: 
+\begin_inset Formula $\omega_{o}=\sqrt{\frac{1+\frac{R_{3}}{R_{1}}}{R_{3}R_{2}C_{1}C_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factor de calidad de la celda: 
+\begin_inset Formula $Q=\frac{Q_{o}}{1-2\alpha Q_{o}^{2}}=\frac{\sqrt{R_{1}R_{3}R_{2}(R_{1}+R_{3})}}{2R_{1}R_{3}-\alpha(R_{1}+R_{3})R_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puede observarse que al haber elegido los capacitores iguales el factor
+ de calidad se independiza idealmente de los valores de los mismos.
+ Se dice idealmente ya que en la práctica resulta imposible lograr la igualdad
+ entre ellos por las tolerancias en los mismos.
+ Es válido para el posterior análisis de sensibilidades aclarar el factor
+ de calidad diferenciando entre ambos capacitores, siendo el mismo 
+\begin_inset Formula $Q=\frac{\sqrt{R_{1}R_{3}R_{2}C_{1}C_{2}(R_{1}+R_{3})}}{R_{1}R_{3}(C_{1}+C_{2})-\alpha(R_{1}+R_{3})R_{2}C_{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Ganancia: 
+\begin_inset Formula $G=\frac{R_{3}R_{2}}{2(K-1)R_{1}R_{3}+K(R_{1}+R_{3})R_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Al igual que con el factor de calidad se logra independizar la ganancia
+ de los valores de los capacitores.
+ También, si tenemos en cuenta ambos capacitores la expresión resulta en
+ 
+\begin_inset Formula $G=\frac{R_{3}R_{2}}{(K-1)R_{1}R_{3}(C_{1}+C_{2})+K(R_{1}+R_{3})R_{2}C_{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Algo a destacar es 
+\begin_inset Formula $Q_{o}$
+\end_inset
+
+, que aparece en la función transferencia.
+ Un estudio realizado por los mismos autores del libro ya mencionado demuestra
+ que el valor óptimo para 
+\begin_inset Formula $Q_{o}$
+\end_inset
+
+ resulta ser 
+\begin_inset Formula $Q_{o}\approx1.5$
+\end_inset
+
+ y luego debe buscarse la relación entre K y las resistencias de la rama
+ de realimentación positiva para obtener el Q del circuito que se desea.
+ 
+\end_layout
+
+\begin_layout Subsection
+Impedancia de entrada
+\end_layout
+
+\begin_layout Standard
+Dada la definición de impedancia de entrada 
+\begin_inset Formula $Z_{in}=\frac{V_{1}}{I_{in}}$
+\end_inset
+
+ , siendo la 
+\begin_inset Formula $I_{in}$
+\end_inset
+
+ la corriente que pasa por la resistencia 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ se consigue la expresión siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{in}=\frac{s^{2}R_{1}R_{2}R_{3}C_{1}C_{2}+sR_{1}R_{3}(C_{1}+C_{2})+R_{1}+R_{3}}{s^{2}R_{3}R_{2}C_{1}C_{2}+sR_{3}(C_{1}+C_{2})+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede comprobar sencillamente que para el caso de continua (
+\begin_inset Formula $s\rightarrow0$
+\end_inset
+
+) la expresión queda simplificada a:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underset{s\rightarrow0}{Z_{in}}=R_{1}+R_{3}
+\]
+
+\end_inset
+
+lo que tiene sentido pues los capacitores actúan como un corto.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Además, cuando la frecuencia tiende a infinito, sucede lo contrario, es
+ decir los capacitores se comportan como cables, y la impedancia de entrada
+ resulta ser la resistencia 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\underset{s\rightarrow\infty}{Z_{in}}=R_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Esto se deriva de que se produce una masa virtual 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el caso de la impedancia de entrada al estar la tensión de salida tomada
+ a la salida del operacional se puede decir que será baja, del orden de
+ la impedancia de salida del mismo.
+\end_layout
+
+\begin_layout Subsection
+Análisis de Sensibilidades
+\end_layout
+
+\begin_layout Standard
+Con ayuda de un software matemático se calcularon las sensibilidades para
+ la frecuencia de corte, factor de calidad, y ganancia respecto a los componente
+s a utilizar en la celda, según la siguiente definición de sensibilidad
+ relativa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{x_{k}}^{f(X)}=\left.\left(\frac{\partial f(X)}{\partial x_{k}}\cdot\frac{x_{k}}{f(X)}\right)\right|_{X=x_{o}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\noindent
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing other 1.7
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\omega_{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $G$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $-\frac{1}{2}\frac{R_{3}}{R_{3}+R_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}-C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}+C_{1}R_{1}+C_{2}R_{1})}{(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})C_{1}R_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{3}^{2}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}-C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}+C_{1}R_{1}+C_{2}R_{1})}{(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})R_{3}C_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}-C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}+C_{1}R_{1}+C_{2}R_{1})}{R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-0.5R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}-KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}+R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $-\frac{1}{2}\frac{R_{1}}{R_{3}+R_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{1}R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}-C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}+C_{1}R_{1}+C_{2}R_{1})}{(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})C_{1}R_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{1}R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}-KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}+R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{2R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}-C_{1}R_{1}+C_{2}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-0.5R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}-R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}-C_{1}R_{1}+C_{2}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}-C_{1}R_{1}+C_{2}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $K$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{K(R_{1}+R_{3})R_{2}C_{1}}{R_{3}C_{1}(K-1)(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{K(R_{1}+R_{3})R_{2}C_{1}}{R_{3}C_{1}(K-1)(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cuadro de sensibilidades de la frecuencia de corte, factor de calidad y
+ ganancia de la celda Rauch.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se observa en el cuadro que únicamente la frecuencia de corte no depende
+ de los capacitores ni de la relación entre las resistencias de la realimentació
+n positiva (K).
+ Por ésto, resulta imposible conseguir ajustes independientes de los parámetros,
+ ya que tanto el factor de calidad como la ganancia dependen de todas las
+ variables.
+ Es decir, para el caso de la Rauch resulta más sencillo realizarla con
+ una frecuencia de corte específica.
+ En particular, las sensibilidades relativas respecto a 
+\begin_inset Formula $C_{1},\,\,C_{2}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ resultan constantes.
+\end_layout
+
+\begin_layout Subsection
+Diseño del Filtro Pasa-Banda
+\end_layout
+
+\begin_layout Standard
+Luego de realizar un análisis teórico de la celda Rauch se realizará un
+ filtro pasabanda implementando este tipo de celdas a partir de la aproximación
+ Chebycheff I.
+\end_layout
+
+\begin_layout Subsubsection
+Requisitos del Filtro
+\end_layout
+
+\begin_layout Standard
+Se pide implementar un filtro para baja señal que cumpla con las siguientes
+ características.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pendiente pasabajos normalizado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-40dB/dec$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20kHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3dB$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|Z_{in}(f)\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\geq50k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Filtro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Especificaciones del filtro pasabanda.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La atenuación en banda de paso debe tener como máximo 3dB, y además, está
+ delimitada por las frecuencias de paso 
+\begin_inset Formula $f_{p}^{+}\,\,y\,\,f_{p}^{-}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta las siguientes relaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B=\frac{\Delta f}{f_{o}}=\frac{f_{p}^{+}-f_{p}^{-}}{f_{o}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{p}^{+}\cdot f_{p}^{-}=f_{o}^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se obtienen los siguientes valores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{p}^{+}=19025Hz,\,\,\,\,f_{p}^{-}=21025Hz,\,\,\,\,\Delta f=2kHz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Otro aspecto a observar es la pendiente que debe tener, que es de 40dB/dec,
+ lo que significa que el filtro debe ser de orden 2, es decir, el orden
+ del filtro normalizado, que al ser desnormalizado se torna de orden 4.
+ 
+\end_layout
+
+\begin_layout Standard
+Entonces, con los datos Ap=3dB, y sendas frecuencias de paso, se utilizó
+ un software de diseño de filtros analógicos para ubicar las frecuencias
+ de cada etapa junto a sus factores de calidad y ubicación de los polos.
+ Desafortunadamente se obtuvo un Q para cada etapa de valor cercano a 30,
+ que es irrealizable en la práctica pues al estar los polos tan cerca del
+ eje imaginario es fácil que resulten en el semiplano derecho, que, en consecuen
+cia, tornaría inestable al sistema.
+\end_layout
+
+\begin_layout Standard
+El factor de calidad se debe al ripple que se genera en la banda pasante
+ en la aproximación Chebycheff I, por lo que este incoveniente puede ser
+ apaciguado disminuyendo el valor de Ap, aún cumpliendo la especificación
+ pedida.
+\end_layout
+
+\begin_layout Standard
+En un segundo intento, reduciendo el 
+\begin_inset Formula $A_{p}=0.01dB$
+\end_inset
+
+ se logran los siguientes valores para cada etapa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{o}[Hz]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\omega_{o}[rad/s]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}[rad/s]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{2}[rad/s]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17786$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $111753$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.52$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1560+j1.4\times10^{5}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.56\times10^{4}-j1.4\times10^{5}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $22489.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $141306$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.52$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1240+j1.11\times10^{5}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1.24\times10^{4}-j1.11\times10^{5}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Frecuencia central de cada etapa con su factor de calidad y polos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Elección de Componentes
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

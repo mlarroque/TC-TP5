@@ -1,0 +1,2048 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Celda Universal
+\end_layout
+
+\begin_layout Subsection
+Introduccion
+\end_layout
+
+\begin_layout Standard
+Las celdas universales tienen en comun queutilizan dos circuitos integradores
+ con el fin de poder llegar a una funcion transferencia generica.
+ Se basan en la resolucion de ecuaciones diferenciales ya que en expresadas
+ como diagramas de bloques cumplen el siguiente fomrato:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename CeldaUniversal.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Formato de una celda universal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En dicho diagrama se puede ver como el sistema consiste unicamente de sumadores
+ e integradores.Dicho sistema puede representar cualquier transferencia ya
+ que se tiene que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=G\frac{a_{2}s^{2}+a_{1}s+a_{0}}{s^{2}+b_{1}s+b_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuacion se muestran algunas de las celdas universales mas basicas
+ y las caracteristicas de cada una.
+\end_layout
+
+\begin_layout Subsubsection
+Celdas universales basicas
+\end_layout
+
+\begin_layout Enumerate
+Celda de Kerwin-Huelsman-Newcomb (KHN) 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La celda utilliza dos configuraciones conocidas de circuitos con amplificadores
+ operacionales, el sumador(puede ser diferencial o el no inversor), y el
+ integrador inversor.
+ El diagrama de la celda es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename KHN.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Kerwin-Huelsman-Newcomb(sumador diferencial)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La relacion entre E4,E3 y E2 es facil de ver ya que solo hace falta plantear
+ la transferencia del circuito inversor en cada caso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+\frac{E_{3}}{E_{4}}=-\frac{1}{sR_{1}C_{1}}\\
+\frac{E_{2}}{E_{3}}=-\frac{1}{sR_{2}C_{2}}
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para obtener la ultima ecuacion necesaria para expresar las tensiones en
+ funcion de 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ se debe plantear la ecuacion correspondiente al sumador diferencial:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $E_{4}=\frac{R_{4}(R_{5}+R_{6})}{R_{5}(R_{3}+R_{4})}E_{1}-\frac{R_{6}}{R_{5}}E_{2}+\frac{R_{3}(R_{5}+R_{6})}{R_{5}(R_{3}+R_{4})}E_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Juntando las tres ecuaciones planteadas se llega a la transferencia:
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=\frac{\frac{R_{4}}{R_{5}(R_{1}R_{2}C_{1}C_{2})}.\frac{R_{5}+R_{6}}{R_{3}+R_{4}}}{}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Objetivos y resumen
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Objetivos-y-resumen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El obetivo principal fue el de disenar y elaborar un filtro Notch de orden
+ 4 con Q=4 utilizando una configuracion en cascada de celdas universales.
+ La celda elegida fue la Tow Fleischer, a lo largo del informe se busca
+ mostrar el razonamento detras de esta decision asi como tambien proporcionar
+ una comparacion de las ventajas y desventajas de las distintas celdas universal
+es posibles.
+\end_layout
+
+\begin_layout Subsection
+Analisis matematico
+\end_layout
+
+\begin_layout Standard
+En la siguiente seccion se presentan los desarrollos y analisis matematicos
+ mas importantes para la celda Fleischer Tow:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename FleischerTowGenerica.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Fleischer Tow a analizar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Funcion transferencia
+\end_layout
+
+\begin_layout Standard
+El siguiente analisis se hara considerando amplificadores operacionaless
+ ideales, estos significa que se considera nula la corriente a la entrada
+ de los operacionales, asi como tambien se cumple que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $v_{1}=v_{3}=v_{5}=0V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En dichas condiciones, planteando las ecuaciones de nodos correspondientes
+ se obtiene el siguiente sistema de ecuaciones lineales:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+-\frac{v_{in}}{R_{3}}=v_{2}(\frac{1}{R_{2}}+sC_{1})+v_{6}(\frac{1}{R_{1}})\\
+-\frac{v_{in}}{R_{7}}=\frac{v_{out}}{R_{5}}+\frac{v_{2}}{R_{4}}\\
+-\frac{v_{in}}{R_{8}}=v_{6}(sC_{2})+v_{out}(\frac{1}{R_{6}})
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dicho sistema se resolvio mediante la funcion linsolve del paquete sympy
+ de Python y se lllego a la siguiente funcion transferencia:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\frac{v_{out}}{v_{in}}=H(s)=-\frac{R_{5}R_{6}}{R_{3}R_{7}R_{8}}\frac{s^{2}C_{1}C_{2}R_{1}R_{2}R_{3}R_{4}R_{8}+sC_{2}R_{1}R_{8}(R_{3}R_{4}-R_{2}R_{7})+R_{2}R_{3}R_{7}}{s^{2}C_{1}C_{2}R_{1}R_{2}R_{4}R_{6}+sC_{2}R_{1}R_{4}R_{6}+R_{2}R_{5}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede ver facilmente de la expresion anterior que se puede anular el
+ termino correspondiente a la primera potencia de s en el numerador, si
+ se plantea la relacion:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+R_{3}R_{4}=R_{2}R_{7}\label{eq:2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces de (1) y e (2), se tiene que la funcion transferencia puede reescirbirs
+e de la forma conocida de un filtro Notch como:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset Formula $H(s)=k\frac{(\frac{s}{\omega_{z}})^{2}+1}{(\frac{s}{\omega_{p}})^{2}+\frac{s}{\omega_{p}Q}+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+k=-\frac{R_{6}}{R_{8}}\\
+\omega_{z}=\sqrt{\frac{R_{7}}{C_{1}C_{2}R_{1}R_{4}R_{8}}}\\
+\omega_{p}=\sqrt{\frac{R_{5}}{C_{1}C_{2}R_{1}R_{4}R_{6}}}\\
+Q=R_{2}\sqrt{\frac{C_{1}R_{5}}{C_{2}R_{1}R_{4}R_{6}}}
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de entrada
+\end_layout
+
+\begin_layout Standard
+Para el calculo de la impedancia de entrada con amplificadores operacionales
+ ideales, se planteo que:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Formula $I_{in}=\frac{v_{in}}{R_{3}}+\frac{v_{in}}{R_{7}}+\frac{v_{in}}{R_{8}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despejando se llega a :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_{in}}{I_{in}}=Z_{inp}=\frac{1}{\frac{1}{R_{3}}+\frac{1}{R_{7}}+\frac{1}{R_{8}}}=R_{3}//R_{7}//R_{8}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debido a que la impedancia de entrada es el paralelo de tres resistencias,
+ si se desea lograr una celda Tow Fleischer con alta impedancia de entrada
+ se requiere que tanto 
+\begin_inset Formula $R_{3}$
+\end_inset
+
+ como 
+\begin_inset Formula $R_{7}$
+\end_inset
+
+y 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tomen valores altos ya que la impedancia de entrada tomara como mucho el
+ valor de la resistencia mas pequeña de las tres.Como alternativa, debe utilizars
+e un buffer a la entrada para tener un alto valor de impedancia de entrada
+ sin importar los valores de 
+\begin_inset Formula $R_{3},R_{7}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de salida
+\end_layout
+
+\begin_layout Subsubsection
+Sensibilidades
+\end_layout
+
+\begin_layout Standard
+A continuacion se presenta un cuadro de las sensibilidades relativas correspondi
+entes a los parametros caracteristicos del filtro Notch de segundo orden
+ que consiste en cada una de las dos etapas del filtro:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{k}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{\omega_{z}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{\omega_{p}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{Q}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sensibilidades-de-los"
+
+\end_inset
+
+Sensibilidades de los parametros del Notch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Rango dinamico
+\end_layout
+
+\begin_layout Subsection
+Plantilla y Eleccion de componentes
+\end_layout
+
+\begin_layout Standard
+Como se menciono brevemente en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Objetivos-y-resumen"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ el filtro debe ser un filtro Notch de una selectividad y un orden determinado,
+ a continuacion se presenta la tabla de especificaciones:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23kHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Requisitos a cumplir
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con dichas especificaciones se procedio a elaborar la aproximacion necesaria
+ para obtener la transferencia del filtro a realizar.
+ Se opto por utilizar la aproximacion de Chebyshev inversa (la misma es
+ util para filtros Notch debido a los ceros de transmision en la banda de
+ atenuacion) para realizar la plantilla de un filtro rechazza banda.Al tener
+ la frecuencia de Notch y el Q preestablecidos, el 
+\begin_inset Formula $\triangle f_{p}$
+\end_inset
+
+ queda fijado ya que se tiene que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+Q=\frac{f_{\infty}}{\triangle f_{p}}\rightarrow\Delta f_{p}=\frac{f_{\infty}}{Q}=5.75kHz\label{eq:4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ y de las siguientes relaciones:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{p}^{+}f_{p}^{-}=f_{\infty}^{2},f_{p}^{-}+\triangle f_{p}=f_{p}^{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede obtener los valores de 
+\begin_inset Formula $f_{p}^{+}$
+\end_inset
+
+ y 
+\begin_inset Formula $f_{p}^{-}$
+\end_inset
+
+.Juntando las relaciones planteadas se llega a la siguiente cuadratica:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{p}^{-^{2}}+\triangle f_{p}f_{p}^{-}-f_{\infty}^{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De dicha cuadratica se obtienen 
+\begin_inset Formula $f_{p}^{-}=20303.99103Hz$
+\end_inset
+
+ y un valor invalido mayor que 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+.
+ Como se tiene el valor de 
+\begin_inset Formula $f_{p}^{-}$
+\end_inset
+
+ y de 
+\begin_inset Formula $\triangle f_{p}$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $f_{p}^{+}=26053.99103Hz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El unico paso restante para tener definida la plantilla a utilizar es definir
+ los valores de 
+\begin_inset Formula $f_{a}^{-}$
+\end_inset
+
+ y 
+\begin_inset Formula $f_{a}^{+}$
+\end_inset
+
+.Como el orden del n esta fijado como requisito en 4, se busco tener la mayor
+ atenuacion posible en la banda de atenuacion sin exceder dicho orden.
+ Al tener un 
+\begin_inset Formula $\triangle f_{a}$
+\end_inset
+
+ lo mas pequeno posible se extiende la banda de transicion asi como tambien
+ se hace menos extensa la banda de atenuacion, esto permite llegar a atenuacione
+s mayor en la banda de atenuacion con ordenes menores.Como este es justamente
+ el caso de un filtro Notch, la unica frecuencia que es de interes atenuar
+ es la 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+ por lo que se dedcidio minimizar el valor de 
+\begin_inset Formula $\triangle f_{a}$
+\end_inset
+
+ en la mayor medida posible.Es por eso que para la plantilla disenada se
+ decidio utilizar:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{a}^{-}=22.99kHz$
+\end_inset
+
+ y 
+\begin_inset Formula $f_{a}^{-}=23.01kHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En resumen, la tabla con la plantilla totalemente definida a la que se llego
+ es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de filtro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aproximacion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}^{-}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}^{+}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}^{-}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}^{+}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rechaza banda
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cheby inverso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03dB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80dB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22,9Khz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23.01kHz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.304Khz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26.054Khz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23Khz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Limitaciones del filtro
+\end_layout
+
+\begin_layout Subsubsection
+Sensibilidades,tolerancias y calibracion
+\end_layout
+
+\begin_layout Standard
+Para la calibracion del filtro se utilizaron dos potenciometros,uno en cada
+ etapa del filtro.El unico parametro que permite calibracion es el 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ de cada etapa, este se considero como el factor mas importante a calibrar
+ ya que se realizo un analisis de Motecarlo del circuito y se llego a la
+ conclusion de que hay demasiados casos en los que la frecuencia de Notch
+ es distinta de 23Khz(Puede ser que la frecuencia de 23Khz ni este en la
+ banda de atenuacion).Por este motivo, se hizo uso de las sensibilidades
+ calculadas en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sensibilidades-de-los"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para determinar que resistencia establecer como variable de ajuste.
+ En primera instancia se considero utiliza la resistencia 
+\begin_inset Formula $R_{7}$
+\end_inset
+
+ ya que la misma parece afectar unicamente 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ y ninguno de los otros parametros del circuito.Sin embargo, este no es el
+ caso ya que el circuito elaborado nunca sera un Notch perfecto, esto quiere
+ decir que los ceros de la transferencia no seran ceros de transmision sino
+ que siempre tendran un componente real no nulo.
+\end_layout
+
+\begin_layout Standard
+Para llegar a la trasnferencia de un Notch asumimos que se cumple la condicion
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.Dicha condicion nunca se cumplira de forma exacta, y en dicho caso se puede
+ encontrar que la expresion que determina el factor de calidad de los ceros
+ del numerador es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+Q_{z}=\sqrt{\frac{C_{1}R_{4}R_{7}}{C_{2}R_{1}R_{8}}}.\frac{R_{2}R_{3}}{R_{3}R_{4}-R_{2}R_{7}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se procedio a calcular las sensibilidades de dicho parametro y se llego
+ a la siguiente tabla:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{Q_{z}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{3}R_{4}}{R_{2}R_{7}-R_{3}R_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{2}R_{7}}{R_{2}R_{7}-R_{3}R_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{2}R_{7}+R_{3}R_{4}}{2(R_{2}R_{7}-R_{3}R_{4})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\begin_inset Formula $\frac{R_{2}R_{7}+R_{3}R_{4}}{2(R_{2}R_{7}-R_{3}R_{4})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta todas las sensibilidades calculadas, se decidio que la
+ mejor variable para utilizar como calibracion es 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+,ya que la misma solo influye en el valor de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+,
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+, y de k.Consideramos el parametro k como de poco interes en relacion con
+ la ubicacion del cero del denominador, al incrementar el valor de 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tanto el valor de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ como el de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ disminuyen.
+ Es por este motivo que se utilizo un valor de 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ de forma tal que los ceros del numerador esten despues de los 23kHz en
+ todos los casos posibles y se puso en serie de dicho valor un preset con
+ el fin de llevar a cabo la calibracion.
+\end_layout
+
+\begin_layout Standard
+Para calibrar se debe comenzar con ambos presets en cero, se debe medir
+ la ganancia en 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+ y se debe incrementar el valor del preset(de uno a la vez) hasta observar
+ que la atenuacion en 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+ es la maxima, luego se procede de la misma forma con el otro preset.
+\end_layout
+
+\begin_layout Subsubsection
+Rango de amplitudes admisibles
+\end_layout
+
+\begin_layout Subsection
+Resultados obtenidos
+\end_layout
+
+\begin_layout Subsubsection
+Funcion transferencia
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de entrada
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de salida
+\end_layout
+
+\begin_layout Subsection
+Analisis de los resultados y comparacion con otras celdas
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
+\end_layout
+
+\end_body
+\end_document
