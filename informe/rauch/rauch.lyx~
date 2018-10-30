@@ -309,7 +309,7 @@ Por ésto, se presenta una celda Delyiannis-Friend alternativa la cual se
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Q Enhancement
 \end_layout
 
@@ -379,6 +379,19 @@ Celda Rauch en configuración pasabanda para Q elevado.
 
 \begin_layout Subsubsection
 Función Transferencia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{section_parametros}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -458,7 +471,7 @@ Al igual que con el factor de calidad se logra independizar la ganancia
  de los valores de los capacitores.
  También, si tenemos en cuenta ambos capacitores la expresión resulta en
  
-\begin_inset Formula $G=\frac{R_{3}R_{2}}{(K-1)R_{1}R_{3}(C_{1}+C_{2})+K(R_{1}+R_{3})R_{2}C_{2}}$
+\begin_inset Formula $G=\frac{R_{3}R_{2}C_{1}}{(K-1)R_{1}R_{3}(C_{1}+C_{2})+K(R_{1}+R_{3})R_{2}C_{2}}$
 \end_inset
 
 .
@@ -532,37 +545,6 @@ Se puede comprobar sencillamente que para el caso de continua (
 \end_inset
 
 lo que tiene sentido pues los capacitores actúan como un corto.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Además, cuando la frecuencia tiende a infinito, sucede lo contrario, es
- decir los capacitores se comportan como cables, y la impedancia de entrada
- resulta ser la resistencia 
-\begin_inset Formula $R_{1}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\underset{s\rightarrow\infty}{Z_{in}}=R_{1}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Esto se deriva de que se produce una masa virtual 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -708,7 +690,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{0.5R_{3}^{2}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}-C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}+C_{1}R_{1}+C_{2}R_{1})}{(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})R_{3}C_{1}}$
+\begin_inset Formula $\frac{-(C_{1}KR_{3}+C_{2}KR_{2}+C_{2}KR_{3}-C_{1}R_{3}-C_{2}R_{3})R_{1}}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -763,7 +745,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{-0.5R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}-KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}+R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\begin_inset Formula $\frac{R_{3}R_{1}(C_{1}K+C_{2}K-C_{1}-C_{2})}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -817,7 +799,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{R_{1}R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}-KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}+R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{2R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})(R_{1}+R_{3})}$
+\begin_inset Formula $\frac{R_{2}KC_{2}R_{1}}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -871,7 +853,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{-0.5R_{3}C_{1}(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}-\frac{C_{2}}{C_{1}}KR_{1}-R_{1}+\frac{C_{2}}{C_{1}}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\begin_inset Formula $\frac{C_{2}(KR_{1}R_{2}+KR_{1}R_{3}+KR_{2}R_{3}-R_{1}R_{3})}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -925,7 +907,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{0.5R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}-C_{2}KR_{1}-C_{1}R_{1}+C_{2}R_{1})}{R_{3}(C_{1}KR_{1}\frac{R_{2}}{R_{3}}+C_{1}KR_{1}+C_{1}KR_{2}+C_{2}KR_{1}-C_{1}R_{1}-C_{2}R_{1})}$
+\begin_inset Formula $\frac{-C_{2}(KR_{1}R_{2}+KR_{1}R_{3}+KR_{2}R_{3}-R_{1}R_{3})}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -979,7 +961,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\frac{K(R_{1}+R_{3})R_{2}C_{1}}{R_{3}C_{1}(K-1)(KR_{1}\frac{R_{2}}{R_{3}}+KR_{1}+KR_{2}+\frac{C_{2}}{C_{1}}KR_{1}-R_{1}-\frac{C_{2}}{C_{1}}R_{1})}$
+\begin_inset Formula $\frac{-(C_{1}R_{1}R_{3}+C_{2}R_{1}R_{2}+C_{2}R_{1}R_{3}+C_{2}R_{2}R_{3})K}{R_{3}R_{1}(C_{1}K+C_{2}K\frac{R_{2}}{R_{3}}+C_{2}K+C_{2}K\frac{R_{2}}{R_{1}}-C_{1}-C_{2})}$
 \end_inset
 
 
@@ -1581,6 +1563,810 @@ Elección de Componentes
 \end_layout
 
 \begin_layout Standard
+Al momento de elegir los componentes se observa que incluso eligiendo ambos
+ capacitores iguales se tienen más variables que parámetros a fijar .
+ Para ésto, se pueden agregar las siguientes relaciones entre los componentes,
+ analizadas en el libro ya mencionado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{1}=\frac{R}{a}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{3}=\frac{R}{1-a}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Existe otra relación entre resistencias que involucra al factor de calidad
+ óptimo (
+\begin_inset Formula $Q_{o}=1.5$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{2}=4Q_{o}^{2}R=9R
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reorganizando las ecuaciones obtenidas en la subsección 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{section_parametros}
+\end_layout
+
+\end_inset
+
+ y conociendo los valores deseados de 
+\begin_inset Formula $\omega_{o}$
+\end_inset
+
+, 
+\begin_inset Formula $Q$
+\end_inset
+
+, y de ganancia se llegan a expresiones simplificadas que permiten elegir
+ valores para los componentes, dejando para establecer la ganancia para
+ cada etapa.
+\end_layout
+
+\begin_layout Standard
+Cabe recordar que la impedancia de entrada debe ser siempre mayor a cierto
+ valor (
+\begin_inset Formula $Z_{in}>50k\varOmega$
+\end_inset
+
+).
+ Esto se debe cumplir para la primera etapa, cerciorándose de que la impedancia
+ de salida de esta sea menor a la de entrada de la celda de la segunda etapa,
+ al estar en cascada.
+ Por ésto, se seteó un nivel alto para 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+(
+\begin_inset Formula $82k\varOmega$
+\end_inset
+
+) y luego se verificó con los valores de los componentes elegidos que la
+ impedancia de entrada no disminuyera su valor de 
+\begin_inset Formula $50k\varOmega$
+\end_inset
+
+, en módulo, como se verá más adelante.
+\end_layout
+
+\begin_layout Standard
+De igual manera, para la segunda etapa se eligió una impedancia de entrada
+ que se supiera mayor a la de salida de la etapa anterior.
+ Con ésto, se seteó 
+\begin_inset Formula $R_{1_{2\text{°etapa}}}$
+\end_inset
+
+
+\begin_inset Formula $=47k\varOmega$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se mencionó anteriormente, el filtro debe ser para baja señal, lo que
+ implica que la mayor ganancia se obtenga en la primera etapa.
+ Sin embargo, como se pedía que la ganancia del filtro fuera unitaria se
+ agregó una tercera etapa para compensar la ganancia con un circuito no
+ inversor.
+ Es decir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{total}(dB)=G_{1\text{° etapa}}(dB)+G_{2° etapa}(dB)+G_{etapa\,\,de\,\,compensación}(dB)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se buscó valores de resistencias para la etapa de compensación de la ganancia
+ tal que la total fuera unitaria en decibeles.
+\end_layout
+
+\begin_layout Standard
+Entonces, con todas los parámetros mencionados y las relaciones entre componente
+s se llegaron a los siguientes valores para la creación de filtro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componentes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R(1-K)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $RK$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $82k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $60.05k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7.32k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $444pF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $444pF$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.85k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $868.5\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $47k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $31.22k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.75k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $680pF$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $680pF$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.02k\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $448.5\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Componentes para ambas etapas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Puesto que la gran mayoría de estos valores no existen en el mercado, se
+ implementaron con una configuración en paralelo o serie para minimizar
+ el error, logrando la mayor precisión posible.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por otro lado, los valores del factor de calidad y la ganancia dependen
+ de todos los componentes como así, sus sensilibidades.
+ Para poder tener un mejor manejo sobre estas variables se decidió colocar
+ un preset en cada celda, de manera de poder ajustar estos valores.
+ Esta resistencia variable se eligió como 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ pues tanto Q como G dependen bastante de ella.
+ 
+\end_layout
+
+\begin_layout Standard
+Se eligió además un preset para la etapa compensadora, de manera de tener
+ mayor control en la ganancia, ajustando atenuaciones indeseadas.
+\end_layout
+
+\begin_layout Standard
+Cada preset se colocó en serie con resistencias base, de pequeño valor de
+ manera tal que si se llegaran a su valor mínimo al ajustar los mismos,
+ el circuito no cambiara considerablemente ni de manera indeseada su comportamie
+nto.
+\end_layout
+
+\begin_layout Standard
+Además, se optaron por resistencias de tolerancia 1%, por la ya mencionada
+ gran dependencia entre los valores de las mismas y el factor de calidad
+ y la ganancia.
+\end_layout
+
+\begin_layout Standard
+Lo último que se definió para el diseño fue la utilización del operacional
+ TL082 por su alta impedancia de entrada, así como por su ancho de banda
+ que al ser de los 4MHz resulta conveniente para este uso, ya que se espera
+ que el filtro funcione para al menos una década después (200kHz) de la
+ frecuencia de corte del filtro.
+\end_layout
+
+\begin_layout Standard
+Para el caso de la etapa compensadora, al simularse se encontró que el filtro
+ sin compensar atenuaba aproximadamente 3.2dB por lo que se buscaron valores
+ de resistencias tal que la ganancia de la etapa de compensación (
+\begin_inset Formula $G_{etapa\,\,de\,\,compensación}=1+\frac{Rf}{Ri})$
+\end_inset
+
+, compensara justamente, con la atenuación de las anteriores etapas.
+\end_layout
+
+\begin_layout Standard
+El circuito resultante fue el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename altiumdesign.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito completo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rango Dinámico
+\end_layout
+
+\begin_layout Standard
+En primer lugar, la definición de rango dinámico relaciona la tensión máxima
+ y mínima que se permite a la entrada del circuito, sin que sature a la
+ salida o sea comparable con el piso de ruido.
+\end_layout
+
+\begin_layout Standard
+Dicha relación está dada por la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{din}(dB)=20log(\frac{V_{max}}{V_{min}})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para analizar a qué tensión máxima se le puede entrar al circuito se debe
+ analizar cuál es la ganancia en cada etapa.
+ Además, si se alimenta al operacional con 
+\begin_inset Formula $\pm15V,$
+\end_inset
+
+ se espera una tensión de saturación de aproximadamente 
+\begin_inset Formula $V_{sat}=\pm13.5V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para la primera etapa se tiene una ganancia de 2.16dB, lo que significa 
+\begin_inset Formula $1.28$
+\end_inset
+
+ en veces, y siendo 
+\begin_inset Formula $V_{max}$
+\end_inset
+
+ 
+\begin_inset Formula $=10.547V$
+\end_inset
+
+, dada por la relación 
+\begin_inset Formula $V_{max}=\frac{V_{sat}}{G_{1\text{°etapa}}}(V)$
+\end_inset
+
+.
+ Con ésto, la ganancia de la segunda etapa se encuentra en 1.218dB, lo que
+ significa una salida 1.15 veces más grande, resultando en una salida de
+ ambas etapas de un valor máximo 
+\begin_inset Formula $V_{sal_{max}}=12.13V$
+\end_inset
+
+, por lo que no habría problema de saturación.
+\end_layout
+
+\begin_layout Standard
+Para el caso de la mínima tensión, el problema mayor se tiene para la segunda
+ etapa pues ya la señal ha sido atenuada, por lo que el ruido se vuelve
+ mucho más comparable con la señal de entrada.
+ Entonces, dada la frecuencia de paso 
+\begin_inset Formula $f_{p}^{+}$
+\end_inset
+
+ que es atenuada 3.56dB a la salida de la primera etapa, resta analizar qué
+ tensión debe entrar para que la segunda etapa pueda distinguir entre el
+ ruido y la señal.
+ Estableciendo el piso del ruido en 
+\begin_inset Formula $20mV_{pp}$
+\end_inset
+
+, se tiene que a la entrada de la segunda etapa la tensión mínima debe ser
+ de 
+\begin_inset Formula $30mV_{pp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Con éstos valores se obtiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{dinámico}=52.13dB
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+AGREGAR CUADRO DE SENSIBILIDADES CON VALORES NUMERICOS QUE ES FACIL GG
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de Montecarlo
+\end_layout
+
+\begin_layout Standard
+A continuación se muestran las simulaciones de Montecarlo del filtro con
+ ganancia compensada con capacitores con tolerancias 5% y resistencias 1%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename mountcharles tranferencia.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación de sensibilidades Montecarlo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La simulación se realizó variando únicamente aquellos componentes que no
+ eran ajustables, es decir no se tuvo en cuenta el error que surge de los
+ presets.
+ Se observa, como era de esperarse que las mayores variaciones se presentan
+ respecto a G y a Q.
+ Además, no parece haber variaciones respecto a la frecuencia de corte,
+ lo que se condice con lo analizado previamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename mountcharles up close.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Detalle de la simulación de sensibilidades Montecarlo con foco en la banda
+ de paso.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
