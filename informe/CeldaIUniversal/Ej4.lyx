@@ -83,8 +83,170 @@ Celda Universal
 Introduccion
 \end_layout
 
+\begin_layout Standard
+Las celdas universales tienen en comun queutilizan dos circuitos integradores
+ con el fin de poder llegar a una funcion transferencia generica.
+ Se basan en la resolucion de ecuaciones diferenciales ya que en expresadas
+ como diagramas de bloques cumplen el siguiente fomrato:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename CeldaUniversal.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Formato de una celda universal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En dicho diagrama se puede ver como el sistema consiste unicamente de sumadores
+ e integradores.Dicho sistema puede representar cualquier transferencia ya
+ que se tiene que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=G\frac{a_{2}s^{2}+a_{1}s+a_{0}}{s^{2}+b_{1}s+b_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuacion se muestran algunas de las celdas universales mas basicas
+ y las caracteristicas de cada una.
+\end_layout
+
 \begin_layout Subsubsection
 Celdas universales basicas
+\end_layout
+
+\begin_layout Enumerate
+Celda de Kerwin-Huelsman-Newcomb (KHN) 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La celda utilliza dos configuraciones conocidas de circuitos con amplificadores
+ operacionales, el sumador(puede ser diferencial o el no inversor), y el
+ integrador inversor.
+ El diagrama de la celda es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename KHN.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Kerwin-Huelsman-Newcomb(sumador diferencial)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La relacion entre E4,E3 y E2 es facil de ver ya que solo hace falta plantear
+ la transferencia del circuito inversor en cada caso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+\frac{E_{3}}{E_{4}}=-\frac{1}{sR_{1}C_{1}}\\
+\frac{E_{2}}{E_{3}}=-\frac{1}{sR_{2}C_{2}}
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para obtener la ultima ecuacion necesaria para expresar las tensiones en
+ funcion de 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ se debe plantear la ecuacion correspondiente al sumador diferencial:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $E_{4}=\frac{R_{4}(R_{5}+R_{6})}{R_{5}(R_{3}+R_{4})}E_{1}-\frac{R_{6}}{R_{5}}E_{2}+\frac{R_{3}(R_{5}+R_{6})}{R_{5}(R_{3}+R_{4})}E_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Juntando las tres ecuaciones planteadas se llega a la transferencia:
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=\frac{\frac{R_{4}(R_{5}+R_{6})}{R_{5}(R_{1}R_{2}C_{1}C_{2})(R_{3}+R_{4})}}{s^{2}+\frac{R_{3}(R_{5}+R_{6})}{R_{1}R_{5}C_{1}(R_{3}+R_{4})}s+\frac{R_{6}}{R_{1}R_{2}R_{5}C_{1}C_{2}}}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -216,7 +378,7 @@ Se puede ver facilmente de la expresion anterior que se puede anular el
 \align center
 \begin_inset Formula 
 \begin{equation}
-R_{3}R_{4}=R_{2}R_{7}
+R_{3}R_{4}=R_{2}R_{7}\label{eq:2}
 \end{equation}
 
 \end_inset
@@ -920,6 +1082,12 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sensibilidades-de-los"
+
+\end_inset
+
 Sensibilidades de los parametros del Notch
 \end_layout
 
@@ -1413,6 +1581,439 @@ Limitaciones del filtro
 
 \begin_layout Subsubsection
 Sensibilidades,tolerancias y calibracion
+\end_layout
+
+\begin_layout Standard
+Para la calibracion del filtro se utilizaron dos potenciometros,uno en cada
+ etapa del filtro.El unico parametro que permite calibracion es el 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ de cada etapa, este se considero como el factor mas importante a calibrar
+ ya que se realizo un analisis de Motecarlo del circuito y se llego a la
+ conclusion de que hay demasiados casos en los que la frecuencia de Notch
+ es distinta de 23Khz(Puede ser que la frecuencia de 23Khz ni este en la
+ banda de atenuacion).Por este motivo, se hizo uso de las sensibilidades
+ calculadas en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sensibilidades-de-los"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ para determinar que resistencia establecer como variable de ajuste.
+ En primera instancia se considero utiliza la resistencia 
+\begin_inset Formula $R_{7}$
+\end_inset
+
+ ya que la misma parece afectar unicamente 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ y ninguno de los otros parametros del circuito.Sin embargo, este no es el
+ caso ya que el circuito elaborado nunca sera un Notch perfecto, esto quiere
+ decir que los ceros de la transferencia no seran ceros de transmision sino
+ que siempre tendran un componente real no nulo.
+\end_layout
+
+\begin_layout Standard
+Para llegar a la trasnferencia de un Notch asumimos que se cumple la condicion
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.Dicha condicion nunca se cumplira de forma exacta, y en dicho caso se puede
+ encontrar que la expresion que determina el factor de calidad de los ceros
+ del numerador es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+Q_{z}=\sqrt{\frac{C_{1}R_{4}R_{7}}{C_{2}R_{1}R_{8}}}.\frac{R_{2}R_{3}}{R_{3}R_{4}-R_{2}R_{7}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se procedio a calcular las sensibilidades de dicho parametro y se llego
+ a la siguiente tabla:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{x}^{Q_{z}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{R_{3}R_{4}}{R_{2}R_{7}-R_{3}R_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{2}R_{7}}{R_{2}R_{7}-R_{3}R_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{R_{2}R_{7}+R_{3}R_{4}}{2(R_{2}R_{7}-R_{3}R_{4})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\begin_inset Formula $\frac{R_{2}R_{7}+R_{3}R_{4}}{2(R_{2}R_{7}-R_{3}R_{4})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta todas las sensibilidades calculadas, se decidio que la
+ mejor variable para utilizar como calibracion es 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+,ya que la misma solo influye en el valor de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+,
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+, y de k.Consideramos el parametro k como de poco interes en relacion con
+ la ubicacion del cero del denominador, al incrementar el valor de 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ tanto el valor de 
+\begin_inset Formula $Q_{z}$
+\end_inset
+
+ como el de 
+\begin_inset Formula $\omega_{z}$
+\end_inset
+
+ disminuyen.
+ Es por este motivo que se utilizo un valor de 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+ de forma tal que los ceros del numerador esten despues de los 23kHz en
+ todos los casos posibles y se puso en serie de dicho valor un preset con
+ el fin de llevar a cabo la calibracion.
+\end_layout
+
+\begin_layout Standard
+Para calibrar se debe comenzar con ambos presets en cero, se debe medir
+ la ganancia en 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+ y se debe incrementar el valor del preset(de uno a la vez) hasta observar
+ que la atenuacion en 
+\begin_inset Formula $f_{\infty}$
+\end_inset
+
+ es la maxima, luego se procede de la misma forma con el otro preset.
 \end_layout
 
 \begin_layout Subsubsection

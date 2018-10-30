@@ -1,0 +1,1340 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+TC-TP5-EJERCICIO 3
+\end_layout
+
+\begin_layout Section
+Filtro con Celdas de Sedra-Ghorab Martin
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se propone la implementación de un filtro pasa
+ altos con las celdas diseñadas por los ingenieros Sedra, Ghorab y Martin.
+ El diseño de esta celda es de la decada de los 80' y enrealidad proviene
+ de diseños realizados en años anteriores.
+ Dado el interés de la electrónica por realizar filtros activos de segundo
+ orden que se implementaran con un solo operacional (con el objetivo de
+ reducir costo y consumo para la implementación), varios ingenieros trabajaron
+ en el diseño de estos y entre ellos fue Deliyannis quien propuso una celda
+ que cumplia con las características deseadas.
+ A continuación se presenta una imagen de la celda de Deliyanis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename circuitoDeliyannis.PNG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito de Deliyannis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El circuito de Deliyannis lograba sus buenas cualidades (por ejemplo, una
+ selectividad considerada 
+\begin_inset Quotes eld
+\end_inset
+
+alta
+\begin_inset Quotes erd
+\end_inset
+
+ para la época) mediante realimentación tanto negativa como positiva del
+ operacional.
+\end_layout
+
+\begin_layout Standard
+Posteriormente el circuito fue mejorado varias veces, e incluso las distintas
+ versiones o mejoras variaban según el tipo de filtro que se requiriese
+ (ya sea pasa banda, pasa altos, etc).
+ Sin embargo, fue recien con la aparación de la optimización realizada por
+ Sedra, Ghorab y Martin que se obtuvo una celda que provoque transferencias
+ de segundo orden con un alto factor de calidad, que permitiera cumplir
+ con plantillas selectivas mediante la implementación de un número reducido
+ de celdas.
+\end_layout
+
+\begin_layout Standard
+En lo que sigue del artículo, se hará referencia a la celda biquadrática
+ de Sedra-Ghorab-Martin como el 
+\begin_inset Quotes eld
+\end_inset
+
+biquad SGM
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Plantilla Propuesta y Función Transferencia
+\end_layout
+
+\begin_layout Standard
+Las celdas se realizarán según la plantilla que se propone a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $12.75KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $25.5KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{a}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $40dB$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2dB$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plantilla Propuesta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta plantilla corresponde a la de un fiiltro pasa altos.
+ Si se utiliza la aproximación de Cauer, se puede obtener una transferencia
+ de orden cuatro con dos pares de polos complejos conjugados y dos pares
+ de ceros los cuales representan ceros de transmisión (un cero de transmisión
+ por cada par de ceros en el plano complejo).
+\end_layout
+
+\begin_layout Standard
+Luego, una vez obtenida la función transferencia que se desea, se procede
+ a obtener el circuito que la cumpla y se lo hará con la implementación
+ de varios biquads SGM.
+\end_layout
+
+\begin_layout Standard
+Vale aclarar que los componentes a utilizar a la hora de la implementación
+ física del filtro, tienen una dispersión asociada a su valor nominal.
+ Por ende, es posible los componentes provoquen que el filtro no cumpla
+ exactamente con la plantilla propuesta, ya que se podrían desplazar algunos
+ de los polos o ceros en cuestión.
+ Por ende, para aportar un margen en el diseño que acepte esta dispersión
+ del valor de los componentes físicos, es conveniente plantear una plantilla
+ aún más restrictiva que la que se propuso al principio.
+ Esta plantilla más restrictiva es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{a}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $13KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $24.5KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{a}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $45dB$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.2dB$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plantilla con Margen Restrictivo 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De esta nueva plantilla se obtiene la siguiente función transferencia (mediante
+ la aproximaciíon de Cauer):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(s)=\frac{G_{\infty}(s^{2}+wz1^{2})(s^{2}+wz2^{2})}{(s^{2}+\frac{wo1s}{Q1}+wo1^{2}).(s^{2}+\frac{wo2s}{Q2}+wo2^{2})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+wo1=271457\frac{rad}{seg}\\
+wz1=87010\frac{rad}{seg}\\
+wo2=155375\frac{rad}{seg}\\
+wz2=38940\frac{rad}{seg}\\
+Q1=0.846\\
+Q2=4.7\\
+K=0.966
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+siendo 
+\begin_inset Formula $wo1,$
+\end_inset
+
+
+\begin_inset Formula $wo2$
+\end_inset
+
+ la frecuencia de corte de los polos, 
+\begin_inset Formula $wz1$
+\end_inset
+
+, 
+\begin_inset Formula $wz2$
+\end_inset
+
+ la frecuencia de los ceros y 
+\begin_inset Formula $Q1,$
+\end_inset
+
+
+\begin_inset Formula $Q2$
+\end_inset
+
+ los factores de calidad.
+\end_layout
+
+\begin_layout Standard
+El diagrama de polos y ceros correspondiente a la función transferencia
+ obtenida es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename poleZeroMap.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Polos y Ceros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Circuito Propuesto
+\end_layout
+
+\begin_layout Standard
+Para cumplir con las especificaciones de la plantilla propuesta, se procederá
+ a implementar el diseño del biquad SGM.
+ Como cada biquad provee una transferencia de segundo orden, serán necesarios
+ dos biquads conectados en cascada.
+ La configuración circuital de cada biquad se presenta a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename circuitoSedra.PNG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda de Sedra Ghorab Martin - Pasa Altos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cada celda proveerá un par de polos y un par de ceros, y dado que hay dos
+ pares de cada uno en la transferencia total, se debe elejir la combinación
+ de polos y ceros que cada celda aportará.
+ Para esto, se debe tener en cuenta que elegir el polo que presenta mayor
+ frecuencia 
+\begin_inset Formula $"wo"$
+\end_inset
+
+ junto con el cero que también presente mayor frecuencia 
+\begin_inset Formula $"wz"$
+\end_inset
+
+, mientras que por otro lado se agrupan los polos y ceros de menor frecuencia
+ angular, brinda un mayor rango dinámico al filtro en su conjunto de celdas.
+\end_layout
+
+\begin_layout Standard
+Por ende, las celdas aportarán las siguientes funciones de transferencia:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{1}(s)=\frac{G_{\infty1}(s^{2}+wz1^{2})}{(s^{2}+\frac{wo1s}{Q1}+wo1^{2})}$
+\end_inset
+
+ (celda 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{2}(s)=\frac{G_{\infty2}(s^{2}+wz2^{2})}{(s^{2}+\frac{wo2s}{Q2}+wo2^{2})}$
+\end_inset
+
+ (celda 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Notar que la celda 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ es la que tiene un factor de calidad menor con respecto a la otra celda.
+ Por ende, también es conveniente que a la hora de conectar en cascada ambas
+ celdas, el orden sea tal que la señal de entrada ingrese primero por la
+ celda 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ y luego se obtenga la señal de salida por la celda 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+ de mayor Q.
+ Vale aclarar que esto provoca un mayor rango dinámico dado que a la celda
+ de mayor factor de calidad (la cual tendrá mayor ganancia en la frecuencia
+ de corte debido a un sobrepico más pronunciado) se le ingresa una señal
+ ya atenuada por la primer celda, lo que implica menor posibilidad de saturación
+ de la señal.
+\end_layout
+
+\begin_layout Subsection
+Análisis de Diseño - Valores de Componentes - Sensibilidades
+\end_layout
+
+\begin_layout Standard
+Dada la función transeferencia de una celda, el paper de 
+\begin_inset Quotes eld
+\end_inset
+
+Optimum Configurations for Single Amplifiers Biquadratic Filters
+\begin_inset Quotes erd
+\end_inset
+
+ sobre SGM presenta el desarrolo matemático para la obtención análitica
+ de los valores de los componentes a utilizar en el armado de cada biquad.
+ De dicho desarrollo se pueden destacar las siguientes ecuaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+wo^{2}=\frac{1}{R1.R4.C^{2}}\\
+\frac{wo}{Q}=\frac{2}{R4.C}-\frac{Rb}{Ra.R1.C}\\
+R4.C=\frac{2Qo}{wo}\\
+K^{*}-1=\frac{1.-Qo}{2.Q.Qo^{2}}\\
+R4=4.Qo^{2}.R1\\
+Rb=(K^{*}-1).Ra\\
+k_{*}=\frac{G_{\infty}.wz^{2}.Q}{wo^{2}.(1-Qo)}(wz*wz)\\
+n=\frac{k_{*}.(1-Qo)}{K^{*}.Q}\\
+m=\frac{k_{*}.(K^{*}-1).(1+\frac{2.Qo^{2}.wo^{2}}{wz^{2}})}{K^{*}}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+siendo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+Ra1=\frac{Ra}{1-k_{*}} & C21=(1-m).C\\
+Ra2=\frac{Ra}{k_{*}} & C22=m.C\\
+R41=\frac{R4}{1-n} & C3=C\\
+R42=\frac{R4}{n}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notese que en las expresiones se han utilizado símbolos de resistencias
+ (
+\begin_inset Formula $Ra,$
+\end_inset
+
+
+\begin_inset Formula $Rb$
+\end_inset
+
+, etc) que se corresponden con las admitancias que se muestran en la figura
+ del biquad SGM mostrada en la sección anterior.
+\end_layout
+
+\begin_layout Standard
+Además, se han introducido una constante 
+\begin_inset Formula $"Qo"$
+\end_inset
+
+ que no está definida según las expresiones.
+ Esta constante es un factor de mérito que entra en juego en el diseño del
+ biquad al tener en cuenta la sensibilidad de 
+\begin_inset Formula $Q$
+\end_inset
+
+ (factor de calidad) con respecto a la ganancia del operacional a lazo abierto
+ (
+\begin_inset Formula $A_{vol}$
+\end_inset
+
+).
+ La expresión que rige esta relación es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{A_{vol}}^{Q}\thickapprox2.Qo.Q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por otro lado, 
+\begin_inset Formula $Qo$
+\end_inset
+
+ también forma parte de las expresiones de sensibilidades de 
+\begin_inset Formula $Q$
+\end_inset
+
+ y 
+\begin_inset Formula $wo$
+\end_inset
+
+ con respecto a los componentes (resistencias o capacitores).
+ A continuación se presenta una tabla con las expresiones que rigen estas
+ sensibilidades:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S^{wo}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S^{Q}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{R1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-(\frac{Q}{Qo}-0.5)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(0.5)(\frac{Q}{Qo}-1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{R4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\frac{Q}{Qo}-0.5)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{Ra}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\begin_inset Formula $(\frac{Q}{Qo}-1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{Rb}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\frac{Q}{Qo}-1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Sensibilidades
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, se puede notar que la asignación del valor de 
+\begin_inset Formula $Qo$
+\end_inset
+
+ depende de una relación de compromiso entre las sensibilidades con respecto
+ a 
+\begin_inset Formula $A_{vol}$
+\end_inset
+
+ y las que son con respecto a los valores de los componentes ya que en unas
+ de estas el término de 
+\begin_inset Formula $Qo$
+\end_inset
+
+ aparece en el numerador de la expresión, mientras que en las otras 
+\begin_inset Formula $Qo$
+\end_inset
+
+ es parte del denominador de las expresiones.
+\end_layout
+
+\begin_layout Standard
+Finalmente, teniendo en cuenta estas variables, se procedió a fijar el valor
+ de 
+\begin_inset Formula $Qo$
+\end_inset
+
+, 
+\begin_inset Formula $C3$
+\end_inset
+
+, 
+\begin_inset Formula $Ra$
+\end_inset
+
+, y se obtuvieron los siguientes valores de componentes:
+\end_layout
+
+\begin_layout Standard
+Celda 1:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+Ra1=1230\Omega & Rb=1650\Omega\\
+Ra2=5230\Omega & C21=1nF\\
+R41=1750\Omega & C22=1nF\\
+R42=9400\Omega & C3=2nF\\
+R1=2300\Omega
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Celda 2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+Ra1=10900\Omega & Rb=2525\Omega\\
+Ra2=118000\Omega & C21=940pF\\
+R41=3500\Omega & C22=3.9nF\\
+R42=50000\Omega & C3=4.7nF\\
+R1=570\Omega
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Compatibilidad entre Celdas - Impedancia de Entrada y de Salida (análisis
+ teórico)
+\end_layout
+
+\begin_layout Subsection
+Simulaciones en LTspice
+\end_layout
+
+\begin_layout Standard
+Con el software de Ltspice se realizaron las simulaciones de la ganancia
+ de cada celda por separado y se obtuvo lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación - Celdas por Separado - Diagrama de Magnitud y Fase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo mismo se realizó para la impedancia de entrada y de salida:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación - Impedancia de Entrada - Celdas por separado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación - Impedancia de Salida - Celdas por separado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ANALISIS DE COMPATIBILIDAD CON LAS IMPEDANCIASSSSSS
+\end_layout
+
+\begin_layout Standard
+Una vez realizado el análisis sobre la adaptación de impedancias de las
+ celdas, se procedió a conectar en cascada las dos etapas de la manera que
+ se ha mencionado con anterioridad y se procedió a realizar una nueva simulación
+, pero esta vez añadiendo un análisis de montecarlo teniendo en cuenta la
+ tolerancia de las resistencias (1%) y los capacitores (5%).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis de Montecarlo - Etapas en cascada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Del análisis de montecarlo se puede notar que existe una dispersión significativ
+a de la ganancia del filtro debido a la dispersión de los valores de los
+ componentes.
+ Con las tolerancias utilizadas, la dispersión no es lo suficientemente
+ importante como para provocar que el filtro no cumpla con la plantilla
+ requerida, sin embargo podría ocurrir que la plantilla no se cumpla si
+ se utilizacen componentes con una dispersión mayor en sus valores.
+\end_layout
+
+\begin_layout Standard
+En cuanto a la fase, en el diagrama obtenido de la simulación de las dos
+ etapas se puede observar como puede tomar dos formas diferentes según la
+ distribución de los valores de los componentes.
+ ESTO SE DEBE ASDJLASJDKLASJDAKSLDJKASD
+\end_layout
+
+\begin_layout Subsection
+Mediciones - Resultados
+\end_layout
+
+\begin_layout Subsection
+Análisis de Resultados
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\end_body
+\end_document
