@@ -95,7 +95,7 @@ Las celdas universales tienen en comun queutilizan dos circuitos integradores
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -240,10 +240,149 @@ Para obtener la ultima ecuacion necesaria para expresar las tensiones en
 Juntando las tres ecuaciones planteadas se llega a la transferencia:
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=\frac{\frac{R_{4}(R_{5}+R_{6})}{R_{5}(R_{1}R_{2}C_{1}C_{2})(R_{3}+R_{4})}}{s^{2}+\frac{R_{3}(R_{5}+R_{6})}{R_{1}R_{5}C_{1}(R_{3}+R_{4})}s+\frac{R_{6}}{R_{1}R_{2}R_{5}C_{1}C_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tow Thomas
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La celda Tow Thomas utiliza un intergrador, un inversor y un sumador integrador
+ .El esquema de la celda es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TowThomas.JPG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Tow Thomas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las transferencias resultantes para cada nodo son: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{3}}{E_{1}}=-\frac{\frac{1}{R_{4}C_{1}}s}{s^{2}+\frac{1}{R_{1}C_{1}}s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{E_{2}}{E_{1}}=-\frac{\frac{1}{R_{2}R_{4}C_{1}C_{2}}}{s^{2}+\frac{1}{R_{1}C_{1}}s+\frac{1}{R_{2}R_{3}C_{1}C_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Fleischer-Tow
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Tiene una configuracion similar a la Tow Thomas salvo dos modificaciones.A
+ diferencia de la celda Tow Thomas, la Fleischer-Tow tiene caminos de 'feedfowar
+d', lo que quiere decir que tiene caminos que van desde la entrada de la
+ celda a la entrada de cada operacional.La otra diferencia es la posicion
+ de los ultimos dos operacionales, en la Fleischer Tow el inversor va antes
+ que el integrador.
+ Aqui se presenta el esquema de dicha celda:
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \align center
-\begin_inset Formula $\frac{E_{2}}{E_{1}}=\frac{\frac{R_{4}}{R_{5}(R_{1}R_{2}C_{1}C_{2})}.\frac{R_{5}+R_{6}}{R_{3}+R_{4}}}{}$
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename FleischerTow.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda Fleischer Tow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El desarrollo matematico de esta celda se encuentra en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Analisis-matematico"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
 
@@ -270,6 +409,12 @@ es posibles.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Analisis-matematico"
+
+\end_inset
+
 Analisis matematico
 \end_layout
 
@@ -483,6 +628,58 @@ e un buffer a la entrada para tener un alto valor de impedancia de entrada
 
 \begin_layout Subsubsection
 Impedancia de salida
+\end_layout
+
+\begin_layout Standard
+Se realizo la simulacion para la impeadancia de salida utilizando los amplificad
+ores operaacionales LM833.
+ A continuacion se muestra el resultado obtenido mediante un analisis de
+ Montecarlo:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ImpedanciaDeSalidaSimulada.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de salida simulada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver la impedancia de salida no tiene un valor particularmente
+ bajo, mas adelante se presentara una tabla con los valores pasivos utilizados
+ en la simulacion.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1109,6 +1306,106 @@ Sensibilidades de los parametros del Notch
 Rango dinamico
 \end_layout
 
+\begin_layout Standard
+El rango dinamico es un parametro que da idea de que tan buena es la excursion
+ del circuito.
+ Expresada en Decibeles la expresion del rango dinamico es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Rd(dB)=20log(\frac{V_{in_{max}}}{Vmin})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $V_{min}$
+\end_inset
+
+ es la tension minima de entrada que esta limitada por el piso de ruido
+ del circuito o del instrumento de medicion que se desea utilizar.
+ Para el caso de esta analisis se tomo como tension minima de entrada 10mV,
+ en cuanto a 
+\begin_inset Formula $V_{in_{max}}$
+\end_inset
+
+,se define como el maximo valor de tension admisible a la entrada sin que
+ el circuito pierda su comportamiento lineal.
+ Suponiendo que la linealidad del circuito esta limitada unicamente por
+ la saturacion a la salida de los operacionales, se puede encontrar la maxima
+ tension admisible a la entrada al buscar cual es el mayor pio de gaancia
+ del circuito y cual es la tension maxima que puede entregar dicho operacional.
+\end_layout
+
+\begin_layout Standard
+La ganancia maxima se obtuvo mediante la simulacion de la salda de cada
+ operacional y la tension maxima que entrega dicho operacional se consiguio
+ de la datasheet del mismo.
+\end_layout
+
+\begin_layout Standard
+Segun la simulacion realizada en LTspice que se muestra a continuacion el
+ maximo pico de ganancia es de 20db:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename MaximoSobrepico.JPG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Salida del operacional con mayor sobrepico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El grafico anterior no esta bien centrado en la frecuencia de notch debido
+ a que el valor del preset debe ajustarse en la practica con el fin de mover
+ el notch a la frecuencia deseada de 23kHz.Tomando como salida maxima del
+ operacional 14V(se utilizo de tension de alimentacion para el mismo Vcc=15V)
+ se llega a que el rango dinamico del circuito es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Rd=20log(|\frac{V_{in_{max}}}{V_{min}}|)=43dB$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Plantilla y Eleccion de componentes
 \end_layout
@@ -1237,7 +1534,7 @@ Con dichas especificaciones se procedio a elaborar la aproximacion necesaria
  para obtener la transferencia del filtro a realizar.
  Se opto por utilizar la aproximacion de Chebyshev inversa (la misma es
  util para filtros Notch debido a los ceros de transmision en la banda de
- atenuacion) para realizar la plantilla de un filtro rechazza banda.Al tener
+ atenuacion) para realizar la plantilla de un filtro rechaza banda.Al tener
  la frecuencia de Notch y el Q preestablecidos, el 
 \begin_inset Formula $\triangle f_{p}$
 \end_inset
@@ -1573,6 +1870,549 @@ Cheby inverso
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para la eleccion de componentes se planteron las siguientes condiciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+C_{1}=C_{2}=10nf\\
+R_{3}R_{4}=R_{2}R_{7}\\
+2\pi f_{p}=\frac{1}{C}\sqrt{\frac{R_{3}R_{5}}{R_{1}R_{2}R_{6}R_{7}}}\\
+Q=\sqrt{\frac{R_{3}R_{5}}{R_{1}R_{2}R_{6}R_{7}}}\\
+R_{6}=1.02R_{8}\\
+\\
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizando las relaciones presentadas anterioremente y eligiendo algunos
+ valores convenientemente se llego a la tabla con los siguiente valores
+ de componentes que fuero los que se utilizaron en la implementacion real
+ del circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componentes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etapa2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10nf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10nf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10nf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10nf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33Ω
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33Ω
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15kΩ//470kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12kΩ+1.8kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15kΩ//470kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ+1.2kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43kΩ+1.8kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ+1.2kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ+1.2kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47kΩ
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43KΩ +
+\begin_inset Formula $Preset_{10kΩ}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43KΩ +
+\begin_inset Formula $Preset_{10kΩ}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Valores de los componentes pasivos utilizados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se simulo la transferencia del circuito utilizando dichos componentes, integrado
+s LM833 y un operacional TL082 como buffer entre etapas.A continuacion se
+ presenta el analisis de Montecarlo del filtro para los presets en sus valores
+ minimos asi como tambien para los mismos en sus valores maximos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Preset100ohms.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Presets en 100Ω
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Preset10k.JPG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Presets en 10K
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align right
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Analisis de Montecarlo para la transferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando los presets estan en su valor minimo todas las frecuencias de Notch
+ se encuentran despues de los 23kHz, a medida que se incrementa el valor
+ de los presets la frecuencia de Notch se desplaza hacia frecuencias mas
+ bajas.Para el valor maximo del preset,en el peor de los casos la frecuencia
+ del notch cae justo en 23kHz y todas las demas frecuencias de Notch son
+ mas bajas.
 \end_layout
 
 \begin_layout Subsection
@@ -2016,32 +2856,42 @@ Para calibrar se debe comenzar con ambos presets en cero, se debe medir
  es la maxima, luego se procede de la misma forma con el otro preset.
 \end_layout
 
-\begin_layout Subsubsection
-Rango de amplitudes admisibles
-\end_layout
-
 \begin_layout Subsection
-Resultados obtenidos
+Comparacion con otras celdas
 \end_layout
 
-\begin_layout Subsubsection
-Funcion transferencia
-\end_layout
-
-\begin_layout Subsubsection
-Impedancia de entrada
-\end_layout
-
-\begin_layout Subsubsection
-Impedancia de salida
-\end_layout
-
-\begin_layout Subsection
-Analisis de los resultados y comparacion con otras celdas
+\begin_layout Standard
+La celda Fleischer Tow tiene como ventajas principales sus bajas sensibilidades,
+ y su versatilidad ya que se puede utillizar para hacer filtros pasa-bajos,pasa-
+altos,pasa-banda,rechaza-banda y pasa-todo sin ninguna modificacion.
+ La celda KHN y Tow Thomas tienen como desventajas principales que no todos
+ los tipos de filtros son posibles sin modificar el circuito original.En
+ el caso de la celda KHN, no hay salida rechaza banda para el mismo, si
+ se desea obtener una salida rechaza banda utiizando dicha celda se debe
+ utilizar un sumador y tomar como salida del filtro la suma ponderada de
+ las tres salidas del KHN.
+ En cuanto a la Tow Thomas, la misma no tiene salida de pasa-altos ni de
+ rechaza banda por lo que tambien se debe agregar un sumador e incrementar
+ la complejidad de la celda si se desea obtener un filtro rechaza-banda.
 \end_layout
 
 \begin_layout Subsection
 Conclusiones
+\end_layout
+
+\begin_layout Standard
+Resumiendo lo expuesto, las celdas universales son celdas que permiten la
+ realizacion de cualquier tansferencia de segundo orden que se desee.La estructur
+a basica de las mismas esta compuesta por integradorres y sumadores, aunque
+ estos pueden ser implementados de muchas formas distintas lo que da lugar
+ a una variedad disinta de celdas universales.Dentro de las celdas universales
+ se analizo con mayor detalle la celda Fleischer Tow.
+ Las sensibilidades de la misma resultaron ser en el peor de los casos 1
+ en modulo, sin embargo debido a las exigencias de la plantilla fue necesario
+ usar tolerancias de 1% para los componentes asi como tambien utilizar dos
+ resistencias variables con el fin de ajustar la ubicacion del notch ya
+ que el analisis de Montcarlo mostro casos en los que podia no cumplirse
+ las exigencias del filtro.
 \end_layout
 
 \end_body
