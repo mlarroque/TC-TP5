@@ -1703,7 +1703,7 @@ Como se mencionó anteriormente, el filtro debe ser para baja señal, lo que
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-G_{total}(dB)=G_{1\text{° etapa}}(dB)+G_{2° etapa}(dB)+G_{etapa\,\,de\,\,compensación}(dB)
+G_{total}(dB)=G_{1\text{° etapa}}(dB)+G_{2°etapa}(dB)+G_{etapa\,\,de\,\,compensación}(dB)
 \end{equation}
 
 \end_inset
@@ -2358,6 +2358,88 @@ status open
 \begin_layout Plain Layout
 Detalle de la simulación de sensibilidades Montecarlo con foco en la banda
  de paso.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Resultados Obtenidos
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra la respuesta en frecuencia del filtro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename mag.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en frecuencia comparada con la teórica y la simulada (módulo).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fase.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en frecuencia comparada con la teórica y la simulada (fase).
 \end_layout
 
 \end_inset
