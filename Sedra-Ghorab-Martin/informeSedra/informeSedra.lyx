@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -27,6 +27,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -57,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -81,14 +82,14 @@ Filtro con Celdas de Sedra-Ghorab Martin
 \begin_layout Standard
 En esta parte del artículo se propone la implementación de un filtro pasa
  altos con las celdas diseñadas por los ingenieros Sedra, Ghorab y Martin.
- El diseño de esta celda es de la decada de los 80' y enrealidad proviene
+ El diseño de esta celda es de la década de los 80' y en realidad proviene
  de diseños realizados en años anteriores.
  Dado el interés de la electrónica por realizar filtros activos de segundo
  orden que se implementaran con un solo operacional (con el objetivo de
  reducir costo y consumo para la implementación), varios ingenieros trabajaron
  en el diseño de estos y entre ellos fue Deliyannis quien propuso una celda
- que cumplia con las características deseadas.
- A continuación se presenta una imagen de la celda de Deliyanis:
+ que cumplía con las características deseadas.
+ A continuación se presenta una imagen de la celda de Deliyannis:
 \end_layout
 
 \begin_layout Standard
@@ -148,7 +149,7 @@ alta
 Posteriormente el circuito fue mejorado varias veces, e incluso las distintas
  versiones o mejoras variaban según el tipo de filtro que se requiriese
  (ya sea pasa banda, pasa altos, etc).
- Sin embargo, fue recien con la aparación de la optimización realizada por
+ Sin embargo, fue recién con la aparición de la optimización realizada por
  Sedra, Ghorab y Martin que se obtuvo una celda que provoque transferencias
  de segundo orden con un alto factor de calidad, que permitiera cumplir
  con plantillas selectivas mediante la implementación de un número reducido
@@ -324,7 +325,7 @@ Plantilla Propuesta
 \end_layout
 
 \begin_layout Standard
-Esta plantilla corresponde a la de un fiiltro pasa altos.
+Esta plantilla corresponde a la de un filtro pasa altos.
  Si se utiliza la aproximación de Cauer, se puede obtener una transferencia
  de orden cuatro con dos pares de polos complejos conjugados y dos pares
  de ceros los cuales representan ceros de transmisión (un cero de transmisión
@@ -492,7 +493,7 @@ Plantilla con Margen Restrictivo
 
 \begin_layout Standard
 De esta nueva plantilla se obtiene la siguiente función transferencia (mediante
- la aproximaciíon de Cauer):
+ la aproximación de Cauer):
 \end_layout
 
 \begin_layout Standard
@@ -652,7 +653,7 @@ Celda de Sedra Ghorab Martin - Pasa Altos
 
 \begin_layout Standard
 Cada celda proveerá un par de polos y un par de ceros, y dado que hay dos
- pares de cada uno en la transferencia total, se debe elejir la combinación
+ pares de cada uno en la transferencia total, se debe elegir la combinación
  de polos y ceros que cada celda aportará.
  Para esto, se debe tener en cuenta que elegir el polo que presenta mayor
  frecuencia 
@@ -702,7 +703,7 @@ Por ende, las celdas aportarán las siguientes funciones de transferencia:
 \end_layout
 
 \begin_layout Standard
-Dada la función transeferencia de una celda, el paper de 
+Dada la función transferencia de una celda, el paper de 
 \begin_inset Quotes eld
 \end_inset
 
@@ -710,7 +711,7 @@ Optimum Configurations for Single Amplifiers Biquadratic Filters
 \begin_inset Quotes erd
 \end_inset
 
- sobre SGM presenta el desarrolo matemático para la obtención análitica
+ sobre SGM presenta el desarrollo matemático para la obtención analítica
  de los valores de los componentes a utilizar en el armado de cada biquad.
  De dicho desarrollo se pueden destacar las siguientes ecuaciones:
 \end_layout
@@ -749,7 +750,7 @@ R42=\frac{R4}{n}
 \end_layout
 
 \begin_layout Standard
-Notese que en las expresiones se han utilizado símbolos de resistencias
+Nótese que en las expresiones se han utilizado símbolos de resistencias
  (
 \begin_inset Formula $Ra,$
 \end_inset
@@ -1124,7 +1125,7 @@ s
 
 ), mientras que sí varían el factor de calidad de la etapa, lo cual puede
  modificar la respuesta transitoria del circuito (en términos de tiempo)
- o el sobrepico (en términos de frecuencia) producido para una frecuencia
+ o el sobre-pico (en términos de frecuencia) producido para una frecuencia
  cercana a 
 \begin_inset Formula $"wo"$
 \end_inset
@@ -1247,7 +1248,7 @@ Ordenamiento de las Celdas
 \end_layout
 
 \begin_layout Standard
-Dada la función tranferencia de cada etapa, se puede observar que la celda
+Dada la función transferencia de cada etapa, se puede observar que la celda
  
 \begin_inset Quotes eld
 \end_inset
@@ -1279,7 +1280,7 @@ Dada la función tranferencia de cada etapa, se puede observar que la celda
  de mayor Q.
  Vale aclarar que esto provoca un mayor rango dinámico dado que a la celda
  de mayor factor de calidad (la cual tendrá mayor ganancia en la frecuencia
- de corte debido a un sobrepico más pronunciado) se le ingresa una señal
+ de corte debido a un sobre-pico más pronunciado) se le ingresa una señal
  ya atenuada por la primer celda, lo que implica menor posibilidad de saturación
  de la señal.
 \end_layout
@@ -1569,7 +1570,7 @@ Anteriormente se ha mencionado la conveniencia de conectar la entrada de
 \begin_inset Quotes erd
 \end_inset
 
- para que las tranferencias no se vean afectadas (o se afecten lo menos
+ para que las transferencias no se vean afectadas (o se afecten lo menos
  posible) al realizar la interconexión de etapas y así poder obtener a la
  salida del circuito una transferencia igual al producto de las funciones
  transferencia de cada etapa.
@@ -1663,7 +1664,7 @@ Etapas en Conjunto
 Una vez realizado el análisis sobre la adaptación de impedancias de las
  celdas, se procedió a conectar en cascada las dos etapas de la manera que
  se ha mencionado con anterioridad y se procedió a realizar una nueva simulación
-, pero esta vez añadiendo un análisis de montecarlo teniendo en cuenta la
+, pero esta vez añadiendo un análisis de Montecarlo teniendo en cuenta la
  tolerancia de las resistencias (1%) y los capacitores (5%).
 \end_layout
 
@@ -1672,7 +1673,7 @@ Una vez realizado el análisis sobre la adaptación de impedancias de las
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1703,13 +1704,13 @@ Análisis de Montecarlo - Etapas en Cascada
 \end_layout
 
 \begin_layout Standard
-Del análisis de montecarlo se puede notar que existe una dispersión significativ
+Del análisis de Montecarlo se puede notar que existe una dispersión significativ
 a de la ganancia del filtro debido a la dispersión de los valores de los
  componentes.
  Con las tolerancias utilizadas, la dispersión no es lo suficientemente
  importante como para provocar que el filtro no cumpla con la plantilla
  requerida, sin embargo podría ocurrir que la plantilla no se cumpla si
- se utilizacen componentes con una dispersión mayor en sus valores.
+ se utilizasen componentes con una dispersión mayor en sus valores.
 \end_layout
 
 \begin_layout Standard
@@ -1792,7 +1793,131 @@ Del gráfico se observa que como máximo se obtiene una impedancia de entrada
 \end_layout
 
 \begin_layout Subsubsection
-Dispersión de Q y Wo
+Dispersión de Wo
+\end_layout
+
+\begin_layout Standard
+Con el objetivo de mostrar el corrimiento de la ubicación de los polos en
+ función de la variación de los valores de componentes se procedió a realizar
+ un histograma que muestre la frecuencia (también se puede pensar como una
+ probabilidad) de un 
+\begin_inset Formula $"wo"$
+\end_inset
+
+ en particular para cada set de componentes que se elija con los valores
+ dentro del rango que especifica la tolerancia (teniendo en cuenta el 1%
+ del tolerancia para las resistencias y el 5% para los capacitores).
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra un histograma de la frecuencia de los 
+\begin_inset Formula $"wo"$
+\end_inset
+
+para cada etapa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histWoE1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Histograma - Etapa 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histWoE2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Histograma - Etapa 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ambos histogramas muestran claramente como el 
+\begin_inset Formula $"wo"$
+\end_inset
+
+ más frecuente es aquel que se ha calculado anteriormente para los valores
+ nominales (o valores teóricos), en particular 
+\begin_inset Formula $wo_{etapa1}=271500\frac{1}{seg}$
+\end_inset
+
+ y 
+\begin_inset Formula $wo_{etapa2}=155400\frac{1}{seg}$
+\end_inset
+
+.
+ Sin embargo, una proporción considerable de frecuencias 
+\begin_inset Formula $"wo"$
+\end_inset
+
+es tanto mayor o menor.
+ En fin, según los componentes que se tomen de la distribución de valores
+ de los mismos el par de polos complejos podrían desplazarse (y lo mismo
+ con los ceros).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1861,7 +1986,7 @@ Luego, para hallar
 
 \begin_layout Standard
 Esto se debe repetir también para las dos etapas del filtro en conjunto,
- y por último debese escoger como 
+ y por último se debe escoger como 
 \begin_inset Formula $Vin_{máx}$
 \end_inset
 
@@ -1913,12 +2038,12 @@ Luego de realizar el análisis teórico desarrolado anteriormente, y una vez
 \end_layout
 
 \begin_layout Standard
-Debese aclarar que el circuito se diseño de manera tal que sea posible medir
- la configuración con la implementación de un buffer para la interconexión
+Se debe aclarar que el circuito se diseño de manera tal que sea posible
+ medir la configuración con la implementación de un buffer para la interconexión
  de las etapas, o sin el uso del mismo (es decir, con las etapas conectadas
  directamente mediante un cable).
  Esto se realizó para poder realizar un análisis sobre la estabilidad de
- las distintas configuraciones, el cual se desarollará más adelante.
+ las distintas configuraciones, el cual se desarrollará más adelante.
 \end_layout
 
 \begin_layout Standard
@@ -2041,9 +2166,9 @@ Además, dado que se realizaron dos tipos de mediciones, una con buffer en
  la plantilla, se puede descartar la idea de la necesidad del buffer para
  adaptar las impedancias de salida y de entrada de las etapas.
  Aún más, si se analiza la respuesta al escalón medida, la medición realizada
- con el buffer muestra que el circuito enrealidad no es estable.
+ con el buffer muestra que el circuito en realidad no es estable.
  El diagrama de respuesta en frecuencia para el circuito con buffer pudo
- ser medidio de todas maneras, ya que al momento de realizar dichas mediciones
+ ser medido de todas maneras, ya que al momento de realizar dichas mediciones
  el circuito no presentaba inestabilidad, pero luego de excitar al mismo
  con un escalón (es decir, con una señal con armónicos de altas frecuencias)
  el circuito no solo presentó oscilaciones, sino que además estas no cesaron
@@ -2054,26 +2179,26 @@ Además, dado que se realizaron dos tipos de mediciones, una con buffer en
 Esto último no ocurrió con el circuito que no implementa el buffer para
  la interconexión en cascada.
  De hecho, en la medición se puede notar que la respuesta transitoria ante
- el escalón como excitación es subamortiguada pero logra establecerse al
- cabo de algunas fracciones de milisegundos.
+ el escalón como excitación es sub-amortiguada pero logra establecerse al
+ cabo de algunas fracciones de mili segundos.
  La manera en la que se puede entender este fenómeno que se expone al comparar
  las mediciones de las dos configuraciones del circuito (con buffer o sin
  buffer) es analizando el margen de ganancia y/o el margen de fase del filtro.
- Para esto, lo correcto es identificar el lazo de retroalimentación del
- circuito y observar lo que sucede con la ganancia de lazo (ganancia y retroalim
-entación) cuando la fase de la misma atraviesa los 180º.
+ Para esto, lo correcto es identificar el lazo de realimentación del circuito
+ y observar lo que sucede con la ganancia de lazo (ganancia y realimentación)
+ cuando la fase de la misma atraviesa los 180º.
  Sin embargo, observar la transferencia del circuito también puede ser un
  indicador de la inestabilidad del circuito.
  De hecho, observando esta última se puede notar que al incorporar el buffer
- existe un sobrepico en altas frecuencias que es más pronunciado (y además
+ existe un sobre-pico en altas frecuencias que es más pronunciado (y además
  llega a una ganancia mayor) que el que se obtiene al no incluir el buffer.
- Evidentemente, este sobrepico pronunciado causa que la ganancia de lazo
+ Evidentemente, este sobre-pico pronunciado causa que la ganancia de lazo
  sea unitaria para fase menor a -180 grados lo cual provoca la saturación
  del sistema y consiguientemente la oscilación del mismo.
 \end_layout
 
 \begin_layout Standard
-Con respecto al sobrepico, este es más pronunciado al agregar el buffer
+Con respecto al sobre-pico, este es más pronunciado al agregar el buffer
  ya que se induce un polo en altas frecuencias que disminuye el amortiguamiento
  de la respuesta transitoria (para las componentes armónicas de frecuencias
  elevadas).
