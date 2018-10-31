@@ -1377,7 +1377,7 @@ Con el software de Ltspice se realizaron las simulaciones de la ganancia
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1481,7 +1481,7 @@ Simulación - Impedancia de Entrada - Celdas por separado
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1492,6 +1492,10 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename zoutFaseE12.png
 	scale 70
@@ -1596,7 +1600,7 @@ A continuación se muestra un diagrama de la impedancia de salida de la celda
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1674,7 +1678,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename montecarlitos.PNG
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -1734,7 +1738,7 @@ Una vez simulada la respuesta en frecuencia, se procede a analizar la impedancia
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1788,11 +1792,124 @@ Del gráfico se observa que como máximo se obtiene una impedancia de entrada
 \end_layout
 
 \begin_layout Subsubsection
-Dispersión de Q y Wo
+Dispersión de Wo
 \end_layout
 
 \begin_layout Standard
+Con el objetivo de mostrar el corrimiento de la ubicación de los polos en
+ función de la variación de los valores de componentes se procedió a realizar
+ un histograma que muestre la frecuencia (también se puede pensar como una
+ probabilidad) de un 
+\begin_inset Formula $"wo"$
+\end_inset
 
+ en particular para cada set de componentes que se elija con los valores
+ dentro del rango que especifica la tolerancia (teniendo en cuenta el 1%
+ del tolerancia para las resistencias y el 5% para los capacitores).
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra un histograma de la frecuencia de los 
+\begin_inset Formula $"wo"$
+\end_inset
+
+para cada etapa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histWoE1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Histograma - Etapa 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histWoE2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Histograma - Etapa 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ambos histogramas muestran claramente como el 
+\begin_inset Formula $"wo"$
+\end_inset
+
+ más frecuente es aquel que se ha calculado anteriormente para los valores
+ nominales (o valores teóricos), en particular 
+\begin_inset Formula $wo_{etapa1}=271500\frac{1}{seg}$
+\end_inset
+
+ y 
+\begin_inset Formula $wo_{etapa2}=155400\frac{1}{seg}$
+\end_inset
+
+.
+ Sin embargo, una dispersión considerable 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1940,6 +2057,10 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename bodeFase.png
 	scale 60
