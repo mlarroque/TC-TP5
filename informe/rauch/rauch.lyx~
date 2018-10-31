@@ -96,17 +96,8 @@ En un principio se analizará teóricamente la celda Rauch, con un enfoque
 
 \begin_layout Standard
 Por otro lado, se observarán restricciones debido a las impedancias de entrada/s
-alida, a los valores de ganancia y valores de Q realizables.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-, y posteriormente se comparará con otras celdas y se verán casos de uso.
-\end_layout
-
-\end_inset
-
-
+alida, a los valores de ganancia y valores de Q realizables, y posteriormente
+ se comparará con otras celdas y se verán casos de uso.
 \end_layout
 
 \begin_layout Standard
@@ -1656,12 +1647,12 @@ Cabe recordar que la impedancia de entrada debe ser siempre mayor a cierto
 \begin_inset Formula $82k\varOmega$
 \end_inset
 
-) y luego se verificó con los valores de los componentes elegidos que la
- impedancia de entrada no disminuyera su valor de 
+) y luego se verificó en una simulación con los valores de los componentes
+ elegidos que la impedancia de entrada no disminuyera su valor de 
 \begin_inset Formula $50k\varOmega$
 \end_inset
 
-, en módulo, como se verá más adelante.
+, en módulo.
 \end_layout
 
 \begin_layout Standard

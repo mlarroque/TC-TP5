@@ -1647,12 +1647,12 @@ Cabe recordar que la impedancia de entrada debe ser siempre mayor a cierto
 \begin_inset Formula $82k\varOmega$
 \end_inset
 
-) y luego se verificó con los valores de los componentes elegidos que la
- impedancia de entrada no disminuyera su valor de 
+) y luego se verificó en una simulación con los valores de los componentes
+ elegidos que la impedancia de entrada no disminuyera su valor de 
 \begin_inset Formula $50k\varOmega$
 \end_inset
 
-, en módulo, como se verá más adelante.
+, en módulo.
 \end_layout
 
 \begin_layout Standard
@@ -1703,8 +1703,8 @@ G_{total}(dB)=G_{1\text{° etapa}}(dB)+G_{2°etapa}(dB)+G_{etapa\,\,de\,\,compen
 \end_layout
 
 \begin_layout Standard
-Se buscó valores de resistencias para la etapa de compensación de la ganancia
- tal que la total fuera unitaria en decibeles.
+Se buscaron valores de resistencias para la etapa de compensación de la
+ ganancia tal que la total fuera unitaria en decibeles.
 \end_layout
 
 \begin_layout Standard
