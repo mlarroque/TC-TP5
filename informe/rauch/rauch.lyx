@@ -96,17 +96,8 @@ En un principio se analizará teóricamente la celda Rauch, con un enfoque
 
 \begin_layout Standard
 Por otro lado, se observarán restricciones debido a las impedancias de entrada/s
-alida, a los valores de ganancia y valores de Q realizables.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-, y posteriormente se comparará con otras celdas y se verán casos de uso.
-\end_layout
-
-\end_inset
-
-
+alida, a los valores de ganancia y valores de Q realizables, y posteriormente
+ se comparará con otras celdas y se verán casos de uso.
 \end_layout
 
 \begin_layout Standard
@@ -2298,7 +2289,7 @@ status open
 \begin_inset Graphics
 	filename mountcharles tranferencia.png
 	lyxscale 60
-	scale 40
+	scale 50
 
 \end_inset
 
@@ -2345,7 +2336,7 @@ status open
 \begin_inset Graphics
 	filename mountcharles up close.png
 	lyxscale 60
-	scale 40
+	scale 50
 
 \end_inset
 
@@ -2370,8 +2361,101 @@ Detalle de la simulación de sensibilidades Montecarlo con foco en la banda
 
 \end_layout
 
+\begin_layout Subsubsection
+Histogramas
+\end_layout
+
+\begin_layout Standard
+Para poder cuantificar la dispersión del ancho de banda del filtro debido
+ a la tolerancia de los componentes se corrieron reiteradas simulaciones,
+ graficando los datos obtenidos en un histograma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename histograma.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Histograma del filtro para el ancho de banda.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename histogramaZoom.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Detalle del histograma para el ancho de banda.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Se puede notar del histograma que en el 25% de los casos el ancho de banda
+ cae en el adecuado valor de 
+\begin_inset Formula $\varDelta f=2kHz$
+\end_inset
+
+, como se quería.
+\end_layout
+
 \begin_layout Subsection
 Resultados Obtenidos
+\end_layout
+
+\begin_layout Subsubsection
+Respuesta en frecuencia
 \end_layout
 
 \begin_layout Standard
@@ -2379,6 +2463,8 @@ A continuación se muestra la respuesta en frecuencia del filtro:
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
 placement H
 wide false
@@ -2416,6 +2502,8 @@ Respuesta en frecuencia comparada con la teórica y la simulada (módulo).
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
 placement H
 wide false
@@ -2450,6 +2538,159 @@ Respuesta en frecuencia comparada con la teórica y la simulada (fase).
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Como se puede observar, el filtro resultó correctamente en un pasabanda.
+ Sin embargo, no se observa el ripple característico de la aproximación
+ Chebycheff I en la banda pasante, ésto es porque se disminuyó considerablemente
+ Ap; recordemos que se eligió para ser de 0.01dB.
+ Cade destacar que el filtro cumple satisfactoriamente con la plantilla
+ provista y que la frecuencia de corte (cuando la fase se encuentra a 
+\begin_inset Formula $0^{o}$
+\end_inset
+
+ cumple lo pedido con un error menor al 1%..
+\end_layout
+
+\begin_layout Subsubsection
+Impedancias de entrada
+\end_layout
+
+\begin_layout Standard
+En principio el valor de 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ se había elegido de manera tal que la impedancia de entrada se mantuviera
+ por encima de los 
+\begin_inset Formula $50k\varOmega$
+\end_inset
+
+ en toda frecuencia, y una vez elegidos los valores se corroboró que ésto
+ se cumpliera con la simulación, aplicando un Montecarlo, que se muestra
+ a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename mountcharles zin.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impedancia de entrada simulada.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, la medición no resultó la esperada, es decir, resultó estar
+ por debajo de los 
+\begin_inset Formula $50k\varOmega$
+\end_inset
+
+.
+ Un análisis más profundo reveló que no era para nada trivial la influencia
+ del preset de la primera etapa, cuya importancia era la de calibrar el
+ Q, en la impedancia de entrada.
+ Se notó empíricamente que al variar el mencionado preset, la impedancia
+ de entrada decaía considerablemente, al mismo tiempo que si se intentaba
+ mejorar, sufría un desvío la frecuencia de corte.
+ Esto podría solucionarse colocando un buffer a la entrada del filtro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename mountcharles zin r2 variante.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Influencia del preset de la primera etapa en la impendancia de entrada.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conclusión
+\end_layout
+
+\begin_layout Standard
+La implementación de un filtro Rauch pasa banda resulta ser sencilla y útil
+ por la poca cantidad de componentes para realizarla.
+ Utilizando relaciones entre componentes y mediante el uso de un preset
+ como determinante del factor de calidad se logró un filtro pasabanda de
+ los valores que se deseaban.
+ Si bien las sensibilidades son altas para el factor de calidad y la ganancia;
+ para la frecuencia central esto no ocurre, por lo que resultaría más sencillo
+ implementar un filtro pasabandas de una frecuencia de corte dada.
+\end_layout
+
+\begin_layout Standard
+Lo que no se logró fue obtener una impedancia de entrada lo suficientemente
+ alta, lo que se solucionaría agregando un buffer a la entrada o bien, refinando
+ las tolerancias de los componentes (matcheando capacitores, por ejemplo).
+ También, se compensó la ganancia de manera satisfactoria al agregársele
+ un etapa de compensación a la salida del filtro.
+\end_layout
+
+\begin_layout Standard
+En definitiva, la celda Rauch resulta útil para implementar circuitos pasabanda
+ de altos Q, debido a la realimentación negativa, a su vez, se corre el
+ riego de que los polos del circuito caigan en el semiplano positivo, lo
+ que generaría que el circuito no sea estable u oscile.
+ 
 \end_layout
 
 \end_body
