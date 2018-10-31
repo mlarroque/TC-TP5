@@ -2685,7 +2685,7 @@ status open
 \begin_inset Graphics
 	filename zout.png
 	lyxscale 60
-	scale 40
+	scale 35
 
 \end_inset
 
@@ -2724,7 +2724,7 @@ status open
 \begin_inset Graphics
 	filename zoutfase.png
 	lyxscale 60
-	scale 40
+	scale 35
 
 \end_inset
 
