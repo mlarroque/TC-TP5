@@ -1377,7 +1377,7 @@ Con el software de Ltspice se realizaron las simulaciones de la ganancia
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1481,7 +1481,7 @@ Simulación - Impedancia de Entrada - Celdas por separado
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1492,10 +1492,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename zoutFaseE12.png
 	scale 70
@@ -1600,7 +1596,7 @@ A continuación se muestra un diagrama de la impedancia de salida de la celda
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1672,13 +1668,13 @@ Una vez realizado el análisis sobre la adaptación de impedancias de las
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename montecarlitos.PNG
-	scale 45
+	scale 50
 
 \end_inset
 
@@ -1738,7 +1734,7 @@ Una vez simulada la respuesta en frecuencia, se procede a analizar la impedancia
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1793,6 +1789,10 @@ Del gráfico se observa que como máximo se obtiene una impedancia de entrada
 
 \begin_layout Subsubsection
 Dispersión de Q y Wo
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1940,10 +1940,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename bodeFase.png
 	scale 60
