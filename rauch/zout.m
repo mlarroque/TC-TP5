@@ -1,9 +1,9 @@
 %semilogx(w/(2*pi),pha);
-semilogx(f,10.^(m./20));
+semilogx(f,fa);
 %semilogx(freqsim,fasesim);
 title('Impedancia de Salida');
 grid on
-ylabel('Modulo [Ohms]');
+ylabel('Fase [grados]');
 xlabel('Frecuencia [Hz]');
 %legend('Teórico','Simulado','Medido');
-%axis([1e3 50e3 -250 200]);
+axis([1e3 50e3 0 180]);

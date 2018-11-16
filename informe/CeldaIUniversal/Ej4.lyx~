@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -29,6 +29,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -61,7 +63,7 @@
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -75,19 +77,26 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Celda Universal
 \end_layout
 
 \begin_layout Subsection
-Introduccion
+Introducción
 \end_layout
 
 \begin_layout Standard
-Las celdas universales tienen en comun queutilizan dos circuitos integradores
- con el fin de poder llegar a una funcion transferencia generica.
- Se basan en la resolucion de ecuaciones diferenciales ya que en expresadas
- como diagramas de bloques cumplen el siguiente fomrato:
+Las celdas universales tienen en común que utilizan dos circuitos integradores
+ con el fin de poder llegar a una función transferencia genérica.
+ Se basan en la resolución de ecuaciones diferenciales ya que en expresadas
+ como diagramas de bloques cumplen el siguiente formato:
 \end_layout
 
 \begin_layout Standard
@@ -144,12 +153,12 @@ En dicho diagrama se puede ver como el sistema consiste unicamente de sumadores
 \end_layout
 
 \begin_layout Standard
-A continuacion se muestran algunas de las celdas universales mas basicas
- y las caracteristicas de cada una.
+A continuación se muestran algunas de las celdas universales mas básicas
+ y las características de cada una.
 \end_layout
 
 \begin_layout Subsubsection
-Celdas universales basicas
+Celdas universales básicas
 \end_layout
 
 \begin_layout Enumerate
@@ -158,7 +167,7 @@ Celda de Kerwin-Huelsman-Newcomb (KHN)
 
 \begin_deeper
 \begin_layout Standard
-La celda utilliza dos configuraciones conocidas de circuitos con amplificadores
+La celda utiliza dos configuraciones conocidas de circuitos con amplificadores
  operacionales, el sumador(puede ser diferencial o el no inversor), y el
  integrador inversor.
  El diagrama de la celda es el siguiente:
@@ -204,7 +213,7 @@ Celda Kerwin-Huelsman-Newcomb(sumador diferencial)
 \end_layout
 
 \begin_layout Standard
-La relacion entre E4,E3 y E2 es facil de ver ya que solo hace falta plantear
+La relación entre E4,E3 y E2 es fácil de ver ya que solo hace falta plantear
  la transferencia del circuito inversor en cada caso:
 \end_layout
 
@@ -220,12 +229,12 @@ La relacion entre E4,E3 y E2 es facil de ver ya que solo hace falta plantear
 \end_layout
 
 \begin_layout Standard
-Para obtener la ultima ecuacion necesaria para expresar las tensiones en
- funcion de 
+Para obtener la ultima ecuación necesaria para expresar las tensiones en
+ función de 
 \begin_inset Formula $E_{1}$
 \end_inset
 
- se debe plantear la ecuacion correspondiente al sumador diferencial:
+ se debe plantear la ecuación correspondiente al sumador diferencial:
 \end_layout
 
 \begin_layout Standard
@@ -255,7 +264,7 @@ Tow Thomas
 
 \begin_deeper
 \begin_layout Standard
-La celda Tow Thomas utiliza un intergrador, un inversor y un sumador integrador
+La celda Tow Thomas utiliza un integrador, un inversor y un sumador integrador
  .El esquema de la celda es el siguiente:
 \end_layout
 
@@ -325,13 +334,13 @@ Fleischer-Tow
 
 \begin_deeper
 \begin_layout Standard
-Tiene una configuracion similar a la Tow Thomas salvo dos modificaciones.A
+Tiene una configuración similar a la Tow Thomas salvo dos modificaciones.A
  diferencia de la celda Tow Thomas, la Fleischer-Tow tiene caminos de 'feedfowar
 d', lo que quiere decir que tiene caminos que van desde la entrada de la
- celda a la entrada de cada operacional.La otra diferencia es la posicion
- de los ultimos dos operacionales, en la Fleischer Tow el inversor va antes
- que el integrador.
- Aqui se presenta el esquema de dicha celda:
+ celda a la entrada de cada operacional.La otra diferencia es la posición
+ de los últimos dos operacionales, en la Fleischer-Tow Tow el inversor va
+ antes que el integrador.
+ Aquí se presenta el esquema de dicha celda:
 \end_layout
 
 \end_deeper
@@ -357,7 +366,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Celda Fleischer Tow
+Celda Fleischer-Tow 
 \end_layout
 
 \end_inset
@@ -400,11 +409,11 @@ name "subsec:Objetivos-y-resumen"
 \end_layout
 
 \begin_layout Standard
-El obetivo principal fue el de disenar y elaborar un filtro Notch de orden
- 4 con Q=4 utilizando una configuracion en cascada de celdas universales.
- La celda elegida fue la Tow Fleischer, a lo largo del informe se busca
- mostrar el razonamento detras de esta decision asi como tambien proporcionar
- una comparacion de las ventajas y desventajas de las distintas celdas universal
+El objetivo principal fue el de diseñar y elaborar un filtro Notch de orden
+ 4 con Q=4 utilizando una configuración en cascada de celdas universales.
+ La celda elegida fue la Fleischer-Tow, a lo largo del informe se busca
+ mostrar el razonamento detrás de esta decisión así como también proporcionar
+ una comparación de las ventajas y desventajas de las distintas celdas universal
 es posibles.
 \end_layout
 
@@ -415,12 +424,12 @@ name "subsec:Analisis-matematico"
 
 \end_inset
 
-Analisis matematico
+Análisis matemático
 \end_layout
 
 \begin_layout Standard
-En la siguiente seccion se presentan los desarrollos y analisis matematicos
- mas importantes para la celda Fleischer Tow:
+En la siguiente sección se presentan los desarrollos y análisis matemáticos
+ mas importantes para la celda Fleischer-Tow:
 \end_layout
 
 \begin_layout Standard
@@ -462,13 +471,13 @@ Celda Fleischer Tow a analizar
 \end_layout
 
 \begin_layout Subsubsection
-Funcion transferencia
+Función transferencia
 \end_layout
 
 \begin_layout Standard
-El siguiente analisis se hara considerando amplificadores operacionaless
+El siguiente análisis se hará considerando amplificadores operacionales
  ideales, estos significa que se considera nula la corriente a la entrada
- de los operacionales, asi como tambien se cumple que:
+ de los operacionales, así como también se cumple que:
 \end_layout
 
 \begin_layout Standard
@@ -497,8 +506,8 @@ En dichas condiciones, planteando las ecuaciones de nodos correspondientes
 \end_layout
 
 \begin_layout Standard
-Dicho sistema se resolvio mediante la funcion linsolve del paquete sympy
- de Python y se lllego a la siguiente funcion transferencia:
+Dicho sistema se resolvió mediante la función linsolve del paquete sympy
+ de Python y se llego a la siguiente función transferencia:
 \end_layout
 
 \begin_layout Standard
@@ -514,9 +523,9 @@ Dicho sistema se resolvio mediante la funcion linsolve del paquete sympy
 \end_layout
 
 \begin_layout Standard
-Se puede ver facilmente de la expresion anterior que se puede anular el
+Se puede ver fácilmente de la expresión anterior que se puede anular el
  termino correspondiente a la primera potencia de s en el numerador, si
- se plantea la relacion:
+ se plantea la relación:
 \end_layout
 
 \begin_layout Standard
@@ -532,7 +541,7 @@ R_{3}R_{4}=R_{2}R_{7}\label{eq:2}
 \end_layout
 
 \begin_layout Standard
-Entonces de (1) y e (2), se tiene que la funcion transferencia puede reescirbirs
+Entonces de (1) y e (2), se tiene que la función transferencia puede reescribirs
 e de la forma conocida de un filtro Notch como:
 \end_layout
 
@@ -631,9 +640,46 @@ Impedancia de salida
 \end_layout
 
 \begin_layout Standard
-Se realizo la simulacion para la impeadancia de salida utilizando los amplificad
-ores operaacionales LM833.
- A continuacion se muestra el resultado obtenido mediante un analisis de
+El calculo de la impedancia de salida se realizo unicamente para la primer
+ etapa y se realizo considerando amplificadores operacionales no ideales.Las
+ ecuaciones resultantes de plantear los nodos del circuito son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+-\frac{v3}{R3}=\frac{(v3-v4)}{Z2}+\frac{(v3-v7)}{R1}\\
+-\frac{(Avol.v3+v4)}{Ro}+\frac{(v3-v4)}{Z2}=\frac{(v4-v5)}{R4}\\
+\frac{(v4-v5)}{R4}-\frac{v5}{R7}=\frac{(v5-vin)}{R5}\\
+-\frac{(Avol*v5+vin)}{Ro}+Iin+\frac{(v5-vin)}{R5}=\frac{(vin-v6)}{R6}\\
+\frac{(vin-v6)}{R6}-\frac{v6}{R_{8}}=(v6-v7)*(s.C2)\\
+-\frac{(Avol*v6+v7)}{Ro}+(v6-v7)*(s*C2)+\frac{(v3-v7)}{R1}=0\\
+Z_{2}=\frac{R_{2}}{sR_{2}C_{1}+1}
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El sistema de ecuaciones lineales anterior se resolvio utilizando el software
+ Maple y se reemplazaron los parametros por sus valores numericos ya que
+ la expresion simbolica obtenida es demasiado compleja y extensa.
+ El resultado obtenido fue:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Z_{out}=\frac{2.361399825*10^{60}*s^{2}+1.718347939*10^{64}*s+1.269761547*10^{87}}{2*10^{-14}*(5.783059279*10^{76}*s^{2}+4.208163426*10^{80}*s+3.306670698*10^{84}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se realizo la simulación para la impedancia de salida utilizando los amplificado
+res operacionales LM833.
+ A continuación se muestra el resultado obtenido mediante un análisis de
  Montecarlo:
 \end_layout
 
@@ -679,7 +725,7 @@ Impedancia de salida simulada
 \begin_layout Standard
 Como se puede ver la impedancia de salida no tiene un valor particularmente
  bajo, mas adelante se presentara una tabla con los valores pasivos utilizados
- en la simulacion.
+ en la simulación.
 \end_layout
 
 \begin_layout Subsubsection
@@ -687,8 +733,8 @@ Sensibilidades
 \end_layout
 
 \begin_layout Standard
-A continuacion se presenta un cuadro de las sensibilidades relativas correspondi
-entes a los parametros caracteristicos del filtro Notch de segundo orden
+A continuación se presenta un cuadro de las sensibilidades relativas correspondi
+entes a los parámetros característicos del filtro Notch de segundo orden
  que consiste en cada una de las dos etapas del filtro:
 \end_layout
 
@@ -1285,7 +1331,7 @@ name "tab:Sensibilidades-de-los"
 
 \end_inset
 
-Sensibilidades de los parametros del Notch
+Sensibilidades de los parámetros del Notch
 \end_layout
 
 \end_inset
@@ -1303,13 +1349,13 @@ Sensibilidades de los parametros del Notch
 \end_layout
 
 \begin_layout Subsubsection
-Rango dinamico
+Rango dinámico
 \end_layout
 
 \begin_layout Standard
-El rango dinamico es un parametro que da idea de que tan buena es la excursion
+El rango dinámico es un parámetro que da idea de que tan buena es la excursión
  del circuito.
- Expresada en Decibeles la expresion del rango dinamico es:
+ Expresada en Decibles la expresión del rango dinámico es:
 \end_layout
 
 \begin_layout Standard
@@ -1325,30 +1371,30 @@ Donde
 \begin_inset Formula $V_{min}$
 \end_inset
 
- es la tension minima de entrada que esta limitada por el piso de ruido
- del circuito o del instrumento de medicion que se desea utilizar.
- Para el caso de esta analisis se tomo como tension minima de entrada 10mV,
+ es la tensión mínima de entrada que esta limitada por el piso de ruido
+ del circuito o del instrumento de medición que se desea utilizar.
+ Para el caso de esta análisis se tomo como tensión mínima de entrada 10mV,
  en cuanto a 
 \begin_inset Formula $V_{in_{max}}$
 \end_inset
 
-,se define como el maximo valor de tension admisible a la entrada sin que
+,se define como el máximo valor de tensión admisible a la entrada sin que
  el circuito pierda su comportamiento lineal.
  Suponiendo que la linealidad del circuito esta limitada unicamente por
- la saturacion a la salida de los operacionales, se puede encontrar la maxima
- tension admisible a la entrada al buscar cual es el mayor pio de gaancia
- del circuito y cual es la tension maxima que puede entregar dicho operacional.
+ la saturación a la salida de los operacionales, se puede encontrar la máxima
+ tensión admisible a la entrada al buscar cual es el mayor pio de ganancia
+ del circuito y cual es la tensión máxima que puede entregar dicho operacional.
 \end_layout
 
 \begin_layout Standard
-La ganancia maxima se obtuvo mediante la simulacion de la salda de cada
- operacional y la tension maxima que entrega dicho operacional se consiguio
+La ganancia máxima se obtuvo mediante la simulación de la salda de cada
+ operacional y la tensión máxima que entrega dicho operacional se consiguió
  de la datasheet del mismo.
 \end_layout
 
 \begin_layout Standard
-Segun la simulacion realizada en LTspice que se muestra a continuacion el
- maximo pico de ganancia es de 20db:
+Segun la simulación realizada en LTspice que se muestra a continuación el
+ máximo pico de ganancia es de 20db:
 \end_layout
 
 \begin_layout Standard
@@ -1373,7 +1419,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Salida del operacional con mayor sobrepico
+Salida del operacional con mayor sobre-pico
 \end_layout
 
 \end_inset
@@ -1391,11 +1437,11 @@ Salida del operacional con mayor sobrepico
 \end_layout
 
 \begin_layout Standard
-El grafico anterior no esta bien centrado en la frecuencia de notch debido
+El gráfico anterior no esta bien centrado en la frecuencia de notch debido
  a que el valor del preset debe ajustarse en la practica con el fin de mover
- el notch a la frecuencia deseada de 23kHz.Tomando como salida maxima del
- operacional 14V(se utilizo de tension de alimentacion para el mismo Vcc=15V)
- se llega a que el rango dinamico del circuito es:
+ el notch a la frecuencia deseada de 23kHz.Tomando como salida máxima del
+ operacional 14V(se utilizo de tensión de alimentación para el mismo Vcc=15V)
+ se llega a que el rango dinámico del circuito es:
 \end_layout
 
 \begin_layout Standard
@@ -1407,7 +1453,7 @@ El grafico anterior no esta bien centrado en la frecuencia de notch debido
 \end_layout
 
 \begin_layout Subsection
-Plantilla y Eleccion de componentes
+Plantilla y Elección de componentes
 \end_layout
 
 \begin_layout Standard
@@ -1422,7 +1468,7 @@ noprefix "false"
 \end_inset
 
  el filtro debe ser un filtro Notch de una selectividad y un orden determinado,
- a continuacion se presenta la tabla de especificaciones:
+ a continuación se presenta la tabla de especificaciones:
 \end_layout
 
 \begin_layout Standard
@@ -1530,11 +1576,11 @@ Requisitos a cumplir
 \end_layout
 
 \begin_layout Standard
-Con dichas especificaciones se procedio a elaborar la aproximacion necesaria
+Con dichas especificaciones se procedió a elaborar la aproximación necesaria
  para obtener la transferencia del filtro a realizar.
- Se opto por utilizar la aproximacion de Chebyshev inversa (la misma es
- util para filtros Notch debido a los ceros de transmision en la banda de
- atenuacion) para realizar la plantilla de un filtro rechaza banda.Al tener
+ Se opto por utilizar la aproximación de Chebyshev inversa (la misma es
+ útil para filtros Notch debido a los ceros de transmisión en la banda de
+ atenuación) para realizar la plantilla de un filtro rechaza banda.Al tener
  la frecuencia de Notch y el Q preestablecidos, el 
 \begin_inset Formula $\triangle f_{p}$
 \end_inset
@@ -1585,7 +1631,7 @@ Se puede obtener los valores de
 \begin_inset Formula $f_{p}^{-}$
 \end_inset
 
-.Juntando las relaciones planteadas se llega a la siguiente cuadratica:
+.Juntando las relaciones planteadas se llega a la siguiente cuadrática:
 \end_layout
 
 \begin_layout Standard
@@ -1597,7 +1643,7 @@ Se puede obtener los valores de
 \end_layout
 
 \begin_layout Standard
-De dicha cuadratica se obtienen 
+De dicha cuadrática se obtienen 
 \begin_inset Formula $f_{p}^{-}=20303.99103Hz$
 \end_inset
 
@@ -1622,7 +1668,7 @@ De dicha cuadratica se obtienen
 \end_layout
 
 \begin_layout Standard
-El unico paso restante para tener definida la plantilla a utilizar es definir
+El único paso restante para tener definida la plantilla a utilizar es definir
  los valores de 
 \begin_inset Formula $f_{a}^{-}$
 \end_inset
@@ -1632,25 +1678,25 @@ El unico paso restante para tener definida la plantilla a utilizar es definir
 \end_inset
 
 .Como el orden del n esta fijado como requisito en 4, se busco tener la mayor
- atenuacion posible en la banda de atenuacion sin exceder dicho orden.
+ atenuación posible en la banda de atenuación sin exceder dicho orden.
  Al tener un 
 \begin_inset Formula $\triangle f_{a}$
 \end_inset
 
- lo mas pequeno posible se extiende la banda de transicion asi como tambien
- se hace menos extensa la banda de atenuacion, esto permite llegar a atenuacione
-s mayor en la banda de atenuacion con ordenes menores.Como este es justamente
- el caso de un filtro Notch, la unica frecuencia que es de interes atenuar
+ lo mas pequeño posible se extiende la banda de transición así como también
+ se hace menos extensa la banda de atenuación, esto permite llegar a atenuacione
+s mayor en la banda de atenuación con ordenes menores.Como este es justamente
+ el caso de un filtro Notch, la única frecuencia que es de interés atenuar
  es la 
 \begin_inset Formula $f_{\infty}$
 \end_inset
 
- por lo que se dedcidio minimizar el valor de 
+ por lo que se deicidio minimizar el valor de 
 \begin_inset Formula $\triangle f_{a}$
 \end_inset
 
- en la mayor medida posible.Es por eso que para la plantilla disenada se
- decidio utilizar:
+ en la mayor medida posible.Es por eso que para la plantilla diseñada se
+ decidió utilizar:
 \end_layout
 
 \begin_layout Standard
@@ -1666,7 +1712,7 @@ s mayor en la banda de atenuacion con ordenes menores.Como este es justamente
 \end_layout
 
 \begin_layout Standard
-En resumen, la tabla con la plantilla totalemente definida a la que se llego
+En resumen, la tabla con la plantilla totalmente definida a la que se llego
  es la siguiente:
 \end_layout
 
@@ -1698,7 +1744,7 @@ Tipo de filtro
 \begin_inset Text
 
 \begin_layout Plain Layout
-Aproximacion
+Aproximación
 \end_layout
 
 \end_inset
@@ -1873,7 +1919,7 @@ Cheby inverso
 \end_layout
 
 \begin_layout Standard
-Para la eleccion de componentes se planteron las siguientes condiciones:
+Para la elección de componentes se plantearon las siguientes condiciones:
 \end_layout
 
 \begin_layout Standard
@@ -1892,9 +1938,9 @@ R_{6}=1.02R_{8}\\
 \end_layout
 
 \begin_layout Standard
-Utilizando las relaciones presentadas anterioremente y eligiendo algunos
+Utilizando las relaciones presentadas anteriormente y eligiendo algunos
  valores convenientemente se llego a la tabla con los siguiente valores
- de componentes que fuero los que se utilizaron en la implementacion real
+ de componentes que fuero los que se utilizaron en la implementación real
  del circuito:
 \end_layout
 
@@ -2299,9 +2345,9 @@ Valores de los componentes pasivos utilizados
 
 \begin_layout Standard
 Se simulo la transferencia del circuito utilizando dichos componentes, integrado
-s LM833 y un operacional TL082 como buffer entre etapas.A continuacion se
- presenta el analisis de Montecarlo del filtro para los presets en sus valores
- minimos asi como tambien para los mismos en sus valores maximos:
+s LM833 y un operacional TL082 como buffer entre etapas.A continuación se
+ presenta el análisis de Montecarlo del filtro para los presets en sus valores
+ mínimos así como también para los mismos en sus valores máximos:
 \end_layout
 
 \begin_layout Standard
@@ -2389,7 +2435,7 @@ Presets en 10K
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Analisis de Montecarlo para la transferencia
+Análisis de Montecarlo para la transferencia
 \end_layout
 
 \end_inset
@@ -2407,11 +2453,11 @@ Analisis de Montecarlo para la transferencia
 \end_layout
 
 \begin_layout Standard
-Cuando los presets estan en su valor minimo todas las frecuencias de Notch
- se encuentran despues de los 23kHz, a medida que se incrementa el valor
+Cuando los presets están en su valor mínimo todas las frecuencias de Notch
+ se encuentran después de los 23kHz, a medida que se incrementa el valor
  de los presets la frecuencia de Notch se desplaza hacia frecuencias mas
- bajas.Para el valor maximo del preset,en el peor de los casos la frecuencia
- del notch cae justo en 23kHz y todas las demas frecuencias de Notch son
+ bajas.Para el valor máximo del preset,en el peor de los casos la frecuencia
+ del notch cae justo en 23kHz y todas las demás frecuencias de Notch son
  mas bajas.
 \end_layout
 
@@ -2420,20 +2466,20 @@ Limitaciones del filtro
 \end_layout
 
 \begin_layout Subsubsection
-Sensibilidades,tolerancias y calibracion
+Sensibilidades,tolerancias y calibración
 \end_layout
 
 \begin_layout Standard
-Para la calibracion del filtro se utilizaron dos potenciometros,uno en cada
- etapa del filtro.El unico parametro que permite calibracion es el 
+Para la calibración del filtro se utilizaron dos potenciómetros,uno en cada
+ etapa del filtro.El único parámetro que permite calibración es el 
 \begin_inset Formula $\omega_{z}$
 \end_inset
 
  de cada etapa, este se considero como el factor mas importante a calibrar
- ya que se realizo un analisis de Motecarlo del circuito y se llego a la
- conclusion de que hay demasiados casos en los que la frecuencia de Notch
+ ya que se realizo un análisis de Motecarlo del circuito y se llego a la
+ conclusión de que hay demasiados casos en los que la frecuencia de Notch
  es distinta de 23Khz(Puede ser que la frecuencia de 23Khz ni este en la
- banda de atenuacion).Por este motivo, se hizo uso de las sensibilidades
+ banda de atenuación).Por este motivo, se hizo uso de las sensibilidades
  calculadas en 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2453,14 +2499,14 @@ noprefix "false"
 \begin_inset Formula $\omega_{z}$
 \end_inset
 
- y ninguno de los otros parametros del circuito.Sin embargo, este no es el
+ y ninguno de los otros parámetros del circuito.Sin embargo, este no es el
  caso ya que el circuito elaborado nunca sera un Notch perfecto, esto quiere
- decir que los ceros de la transferencia no seran ceros de transmision sino
- que siempre tendran un componente real no nulo.
+ decir que los ceros de la transferencia no serán ceros de transmisión sino
+ que siempre tendrán un componente real no nulo.
 \end_layout
 
 \begin_layout Standard
-Para llegar a la trasnferencia de un Notch asumimos que se cumple la condicion
+Para llegar a la transferencia de un Notch asumimos que se cumple la condición
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2471,8 +2517,8 @@ noprefix "false"
 
 \end_inset
 
-.Dicha condicion nunca se cumplira de forma exacta, y en dicho caso se puede
- encontrar que la expresion que determina el factor de calidad de los ceros
+.Dicha condición nunca se cumplirá de forma exacta, y en dicho caso se puede
+ encontrar que la expresión que determina el factor de calidad de los ceros
  del numerador es:
 \end_layout
 
@@ -2489,7 +2535,7 @@ Q_{z}=\sqrt{\frac{C_{1}R_{4}R_{7}}{C_{2}R_{1}R_{8}}}.\frac{R_{2}R_{3}}{R_{3}R_{4
 \end_layout
 
 \begin_layout Standard
-Se procedio a calcular las sensibilidades de dicho parametro y se llego
+Se procedió a calcular las sensibilidades de dicho parámetro y se llego
  a la siguiente tabla:
 \end_layout
 
@@ -2806,8 +2852,8 @@ Sensibilidades de
 \end_layout
 
 \begin_layout Standard
-Teniendo en cuenta todas las sensibilidades calculadas, se decidio que la
- mejor variable para utilizar como calibracion es 
+Teniendo en cuenta todas las sensibilidades calculadas, se decidió que la
+ mejor variable para utilizar como calibración es 
 \begin_inset Formula $R_{8}$
 \end_inset
 
@@ -2819,8 +2865,8 @@ Teniendo en cuenta todas las sensibilidades calculadas, se decidio que la
 \begin_inset Formula $Q_{z}$
 \end_inset
 
-, y de k.Consideramos el parametro k como de poco interes en relacion con
- la ubicacion del cero del denominador, al incrementar el valor de 
+, y de k.Consideramos el parámetro k como de poco interés en relación con
+ la ubicación del cero del denominador, al incrementar el valor de 
 \begin_inset Formula $R_{8}$
 \end_inset
 
@@ -2837,9 +2883,9 @@ Teniendo en cuenta todas las sensibilidades calculadas, se decidio que la
 \begin_inset Formula $R_{8}$
 \end_inset
 
- de forma tal que los ceros del numerador esten despues de los 23kHz en
+ de forma tal que los ceros del numerador estén después de los 23kHz en
  todos los casos posibles y se puso en serie de dicho valor un preset con
- el fin de llevar a cabo la calibracion.
+ el fin de llevar a cabo la calibración.
 \end_layout
 
 \begin_layout Standard
@@ -2849,29 +2895,29 @@ Para calibrar se debe comenzar con ambos presets en cero, se debe medir
 \end_inset
 
  y se debe incrementar el valor del preset(de uno a la vez) hasta observar
- que la atenuacion en 
+ que la atenuación en 
 \begin_inset Formula $f_{\infty}$
 \end_inset
 
- es la maxima, luego se procede de la misma forma con el otro preset.
+ es la máxima, luego se procede de la misma forma con el otro preset.
 \end_layout
 
 \begin_layout Subsection
-Comparacion con otras celdas
+Comparación con otras celdas
 \end_layout
 
 \begin_layout Standard
 La celda Fleischer Tow tiene como ventajas principales sus bajas sensibilidades,
- y su versatilidad ya que se puede utillizar para hacer filtros pasa-bajos,pasa-
-altos,pasa-banda,rechaza-banda y pasa-todo sin ninguna modificacion.
+ y su versatilidad ya que se puede utilizar para hacer filtros pasa-bajos,pasa-a
+ltos,pasa-banda,rechaza-banda y pasa-todo sin ninguna modificación.
  La celda KHN y Tow Thomas tienen como desventajas principales que no todos
  los tipos de filtros son posibles sin modificar el circuito original.En
  el caso de la celda KHN, no hay salida rechaza banda para el mismo, si
- se desea obtener una salida rechaza banda utiizando dicha celda se debe
+ se desea obtener una salida rechaza banda utilizando dicha celda se debe
  utilizar un sumador y tomar como salida del filtro la suma ponderada de
  las tres salidas del KHN.
  En cuanto a la Tow Thomas, la misma no tiene salida de pasa-altos ni de
- rechaza banda por lo que tambien se debe agregar un sumador e incrementar
+ rechaza banda por lo que también se debe agregar un sumador e incrementar
  la complejidad de la celda si se desea obtener un filtro rechaza-banda.
 \end_layout
 
@@ -2881,17 +2927,24 @@ Conclusiones
 
 \begin_layout Standard
 Resumiendo lo expuesto, las celdas universales son celdas que permiten la
- realizacion de cualquier tansferencia de segundo orden que se desee.La estructur
-a basica de las mismas esta compuesta por integradorres y sumadores, aunque
- estos pueden ser implementados de muchas formas distintas lo que da lugar
- a una variedad disinta de celdas universales.Dentro de las celdas universales
- se analizo con mayor detalle la celda Fleischer Tow.
+ realización de cualquier transferencia de segundo orden que se desee.La
+ estructura básica de las mismas esta compuesta por integradores y sumadores,
+ aunque estos pueden ser implementados de muchas formas distintas lo que
+ da lugar a una variedad distinta de celdas universales.Dentro de las celdas
+ universales se analizo con mayor detalle la celda Fleischer Tow.
  Las sensibilidades de la misma resultaron ser en el peor de los casos 1
  en modulo, sin embargo debido a las exigencias de la plantilla fue necesario
- usar tolerancias de 1% para los componentes asi como tambien utilizar dos
- resistencias variables con el fin de ajustar la ubicacion del notch ya
- que el analisis de Montcarlo mostro casos en los que podia no cumplirse
+ usar tolerancias de 1% para los componentes así como también utilizar dos
+ resistencias variables con el fin de ajustar la ubicación del notch ya
+ que el análisis de Montcarlo mostró casos en los que podía no cumplirse
  las exigencias del filtro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \end_body

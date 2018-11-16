@@ -1703,8 +1703,8 @@ G_{total}(dB)=G_{1\text{° etapa}}(dB)+G_{2°etapa}(dB)+G_{etapa\,\,de\,\,compen
 \end_layout
 
 \begin_layout Standard
-Se buscó valores de resistencias para la etapa de compensación de la ganancia
- tal que la total fuera unitaria en decibeles.
+Se buscaron valores de resistencias para la etapa de compensación de la
+ ganancia tal que la total fuera unitaria en decibeles.
 \end_layout
 
 \begin_layout Standard
@@ -2660,6 +2660,103 @@ Influencia del preset de la primera etapa en la impendancia de entrada.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Impedancia de salida
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra la impedancia de salida simulada.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename zout.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Módulo de impedancia de salida.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename zoutfase.png
+	lyxscale 60
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de impedancia de salida.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como era de esperarse, el filtro posee una impedancia baja ya que la salida
+ del circuito está tomada a la salida del operacional.
+ Aproximadamente en el rango de la banda pasante se encuentra el máximo
+ de la impedancia, cercano a 
+\begin_inset Formula $20\varOmega$
+\end_inset
+
+, creciendo paulatinamente a frecuencias más altas.
 \end_layout
 
 \begin_layout Subsection

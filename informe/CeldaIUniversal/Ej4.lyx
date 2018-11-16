@@ -77,6 +77,13 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Celda Universal
 \end_layout
@@ -630,6 +637,43 @@ e un buffer a la entrada para tener un alto valor de impedancia de entrada
 
 \begin_layout Subsubsection
 Impedancia de salida
+\end_layout
+
+\begin_layout Standard
+El calculo de la impedancia de salida se realizo unicamente para la primer
+ etapa y se realizo considerando amplificadores operacionales no ideales.Las
+ ecuaciones resultantes de plantear los nodos del circuito son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\begin{array}{c}
+-\frac{v3}{R3}=\frac{(v3-v4)}{Z2}+\frac{(v3-v7)}{R1}\\
+-\frac{(Avol.v3+v4)}{Ro}+\frac{(v3-v4)}{Z2}=\frac{(v4-v5)}{R4}\\
+\frac{(v4-v5)}{R4}-\frac{v5}{R7}=\frac{(v5-vin)}{R5}\\
+-\frac{(Avol*v5+vin)}{Ro}+Iin+\frac{(v5-vin)}{R5}=\frac{(vin-v6)}{R6}\\
+\frac{(vin-v6)}{R6}-\frac{v6}{R_{8}}=(v6-v7)*(s.C2)\\
+-\frac{(Avol*v6+v7)}{Ro}+(v6-v7)*(s*C2)+\frac{(v3-v7)}{R1}=0\\
+Z_{2}=\frac{R_{2}}{sR_{2}C_{1}+1}
+\end{array}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El sistema de ecuaciones lineales anterior se resolvio utilizando el software
+ Maple y se reemplazaron los parametros por sus valores numericos ya que
+ la expresion simbolica obtenida es demasiado compleja y extensa.
+ El resultado obtenido fue:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Z_{out}=\frac{2.361399825*10^{60}*s^{2}+1.718347939*10^{64}*s+1.528312761*10^{63}}{2*10^{-14}*(5.783059279*10^{76}*s^{2}+4.208163426*10^{80}*s+1.269761547*10^{87})}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2894,6 +2938,13 @@ Resumiendo lo expuesto, las celdas universales son celdas que permiten la
  resistencias variables con el fin de ajustar la ubicación del notch ya
  que el análisis de Montcarlo mostró casos en los que podía no cumplirse
  las exigencias del filtro.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -14821,7 +14821,6 @@ Las celdas universales tienen en común que utilizan dos circuitos integradores
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -14832,7 +14831,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/CeldaUniversal.JPG
-	scale 70
+	scale 40
 
 \end_inset
 
@@ -14916,7 +14915,6 @@ La celda utiliza dos configuraciones conocidas de circuitos con amplificadores
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -14927,7 +14925,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/KHN.JPG
-	scale 70
+	scale 40
 
 \end_inset
 
@@ -15036,7 +15034,6 @@ La celda Tow Thomas utiliza un integrador, un inversor y un sumador integrador
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -15047,7 +15044,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/TowThomas.JPG
-	scale 70
+	scale 40
 
 \end_inset
 
@@ -15131,10 +15128,9 @@ d', lo que quiere decir que tiene caminos que van desde la entrada de la
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -15142,7 +15138,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/FleischerTow.JPG
-	scale 70
+	scale 50
 
 \end_inset
 
@@ -15237,7 +15233,6 @@ En la siguiente sección se presentan los desarrollos y análisis matemáticos
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -15546,7 +15541,6 @@ res operacionales LM833.
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -15616,7 +15610,6 @@ entes a los parámetros característicos del filtro Notch de segundo orden
 
 \lang spanish
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status collapsed
@@ -16404,7 +16397,6 @@ Segun la simulación realizada en LTspice que se muestra a continuación el
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -16495,7 +16487,6 @@ noprefix "false"
 
 \lang spanish
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status collapsed
@@ -17052,7 +17043,6 @@ Utilizando las relaciones presentadas anteriormente y eligiendo algunos
 
 \lang spanish
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status collapsed
@@ -17535,7 +17525,6 @@ s LM833 y un operacional TL082 como buffer entre etapas.A continuación se
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -17545,7 +17534,6 @@ status collapsed
 
 \lang spanish
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
@@ -17556,7 +17544,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/Preset100ohms.JPG
-	scale 15
+	scale 30
 
 \end_inset
 
@@ -17583,10 +17571,13 @@ Presets en 100Ω
 
 
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -17594,7 +17585,7 @@ status collapsed
 \lang spanish
 \begin_inset Graphics
 	filename CeldaIUniversal/Preset10k.JPG
-	scale 15
+	scale 30
 
 \end_inset
 
@@ -17758,7 +17749,6 @@ Se procedió a calcular las sensibilidades de dicho parámetro y se llego
 
 \lang spanish
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status collapsed
