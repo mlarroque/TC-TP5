@@ -688,7 +688,7 @@ res operacionales LM833.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -743,7 +743,7 @@ entes a los parámetros característicos del filtro Notch de segundo orden
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1336,10 +1336,6 @@ Sensibilidades de los parámetros del Notch
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1948,7 +1944,7 @@ Utilizando las relaciones presentadas anteriormente y eligiendo algunos
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2354,7 +2350,7 @@ s LM833 y un operacional TL082 como buffer entre etapas.A continuación se
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2544,7 +2540,7 @@ Se procedió a calcular las sensibilidades de dicho parámetro y se llego
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2842,10 +2838,6 @@ Sensibilidades de
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -2900,6 +2892,105 @@ Para calibrar se debe comenzar con ambos presets en cero, se debe medir
 \end_inset
 
  es la máxima, luego se procede de la misma forma con el otro preset.
+\end_layout
+
+\begin_layout Subsection
+Resultados de las mediciones
+\end_layout
+
+\begin_layout Standard
+A continuación se presenta la gráfica de Bode obtenida de la medición del
+ circuito elaborado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BodeMag.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Magnitud de la función transferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BodeFase.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la función transferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La principal diferencia con la curva teórica que se puede ver el gráfica
+ de magnitud del bode es la diferencia en las notch depth entre ambas.Esto
+ se debe a que la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ no se cumple en la realidad debido a las tolerancias de los componentes,
+ esto resulta en un valor de Q finito en el numerador y en consecuencia
+ un menor valor de notch depth.
 \end_layout
 
 \begin_layout Subsection

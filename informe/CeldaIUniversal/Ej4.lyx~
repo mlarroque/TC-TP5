@@ -670,7 +670,7 @@ El sistema de ecuaciones lineales anterior se resolvio utilizando el software
 
 \begin_layout Standard
 \align center
-\begin_inset Formula $Z_{out}=\frac{2.361399825*10^{60}*s^{2}+1.718347939*10^{64}*s+1.269761547*10^{87}}{2*10^{-14}*(5.783059279*10^{76}*s^{2}+4.208163426*10^{80}*s+3.306670698*10^{84}}$
+\begin_inset Formula $Z_{out}=\frac{2.361399825*10^{60}*s^{2}+1.718347939*10^{64}*s+1.528312761*10^{63}}{2*10^{-14}*(5.783059279*10^{76}*s^{2}+4.208163426*10^{80}*s+1.269761547*10^{87})}$
 \end_inset
 
 
@@ -2900,6 +2900,105 @@ Para calibrar se debe comenzar con ambos presets en cero, se debe medir
 \end_inset
 
  es la máxima, luego se procede de la misma forma con el otro preset.
+\end_layout
+
+\begin_layout Subsection
+Resultados de las mediciones
+\end_layout
+
+\begin_layout Standard
+A continuación se presenta la gráfica de Bode obtenida de la medición del
+ circuito elaborado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BodeMag.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Magnitud de la función transferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename BodeFase.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fase de la función transferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La principal diferencia con la curva teórica que se puede ver el gráfica
+ de magnitud del bode es la diferencia en las notch depth entre ambas.Esto
+ se debe a que la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ no se cumple en la realidad debido a las tolerancias de los componentes,
+ esto resulta en un valor de Q finito en el numerador y en consecuencia
+ un menor valor de notch depth.
 \end_layout
 
 \begin_layout Subsection
